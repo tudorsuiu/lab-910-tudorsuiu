@@ -3,3 +3,23 @@
 //
 
 #include "Service.h"
+
+Service::Service(RepositoryInFile<Product> repositoryInFile) {
+    this->repository = repositoryInFile;
+}
+
+void Service::create(Product entity) {
+    repository.addEntity(entity);
+}
+
+std::vector<Product> Service::read() {
+    return repository.getAll();
+}
+
+void Service::update(int index, Product newEntity) {
+    repository.updateEntity(index, newEntity);
+}
+
+void Service::del(int index) {
+    repository.deleteEntity(index);
+}

@@ -7,6 +7,8 @@
 
 
 #include <string>
+#include <vector>
+#include <sstream>
 
 class Product {
 private:
@@ -73,6 +75,26 @@ public:
      * @param price: unsigned int - new product price
      */
     void setPrice(unsigned int price);
+
+    std::string toStringDelimiter(char sep) {
+        return std::to_string(this->code) + sep + this->name + sep + std::to_string(this->price);
+    }
+
+    void loadFromString(std::string args, char sep) {
+        std::vector<std::string> elements;
+        std::stringstream ss (args);
+        std::string object;
+        while (getline (ss, object, sep)) {
+            elements.push_back(object);
+        }
+        if(elements.size() == 3) {
+            std::stringstream c(elements[0]);
+            c >> this->code;
+            this->name = elements[1];
+            std::stringstream p(elements[2]);
+            p >> this->price;
+        }
+    }
 
     Product& operator=(const Product& product);
 

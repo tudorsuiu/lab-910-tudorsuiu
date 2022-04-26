@@ -5,8 +5,6 @@
 #ifndef LAB_910_TUDORSUIU_REPOSITORY_H
 #define LAB_910_TUDORSUIU_REPOSITORY_H
 
-#include <ostream>
-#include <cstring>
 #include <vector>
 
 template<class T> class Repository {

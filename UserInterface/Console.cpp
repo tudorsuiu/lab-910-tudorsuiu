@@ -5,6 +5,8 @@
 #include <iostream>
 #include "Console.h"
 
+
+
 void Console::showMenu() {
     std::cout << '\n';
     std::cout << "_________------MENU------_________" << '\n';
@@ -28,11 +30,13 @@ void Console::runMenu() {
                 Product product;
                 std::cin >> product;
 
-                repository.addEntity(product);
+                service.create(product);
                 break;
             }
             case '2': {
-                std::cout << repository;
+                for(int i = 0; i < service.read().size(); i++) {
+                    std::cout << service.read()[i] << '\n';
+                }
                 break;
             }
             case '3': {
@@ -40,10 +44,10 @@ void Console::runMenu() {
                 std::cin >> newProduct;
 
                 int index;
-                index = repository.getPosByCode(newProduct.getCode());
+                index = newProduct.getCode() - 1;
 
                 if(index != -1) {
-                    repository.updateEntity(index, newProduct);
+                    service.update(index, newProduct);
                 }
                 break;
             }
@@ -53,9 +57,9 @@ void Console::runMenu() {
                 std::cin >> code;
 
                 int index;
-                index = repository.getPosByCode(code);
+                index = code - 1;
 
-                repository.deleteEntity(index);
+                service.del(index);
                 break;
             }
             case 'x': {

@@ -4,9 +4,12 @@
 
 int main() {
     Test test;
-    test.all();
+    //test.all();
 
-    Console console;
+    RepositoryInFile<Product> repositoryInFile("products.txt");
+    Service service(repositoryInFile);
+    Console console(service);
+
     console.runMenu();
     return 0;
 }

@@ -111,7 +111,9 @@
 				3,
 				5,
 				7,
-				9
+				9,
+				10,
+				11
 			]
 		}
 	],
@@ -170,6 +172,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "Tests/Test.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Repository/RepositoryInFile.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Repository/IRepository.h",
 			"sourceGroupIndex" : 1
 		}
 	],
