@@ -13,7 +13,6 @@ class Console {
 private:
     Service service;
 public:
-    Console(Service service);
     void showMenu();
     void runMenu();
 };

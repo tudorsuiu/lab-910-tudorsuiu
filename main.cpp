@@ -7,9 +7,7 @@ int main() {
     //test.all();
 
     RepositoryInFile<Product> repositoryInFile("products.txt");
-    Service service(repositoryInFile);
-    Console console(service);
-
+    Console console;
     console.runMenu();
     return 0;
 }
