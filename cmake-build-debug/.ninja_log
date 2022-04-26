@@ -60,3 +60,9 @@
 3	522	6726926145927172	CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj	7787dbb9c9b816de
 14	542	6726926146137106	CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj	470d5e6d8b9e02a8
 543	667	6726926147312190	lab_910_tudorsuiu.exe	ba7e7c16545d821b
+15	493	6726973212119674	CMakeFiles/lab_910_tudorsuiu.dir/Service/Service.cpp.obj	971bfaef5bbebb17
+19	496	6726973212169717	CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj	dcba55429bd6a28a
+13	580	6726973212999657	CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product.cpp.obj	748d6c805f75cb96
+3	587	6726973213069705	CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj	7787dbb9c9b816de
+17	675	6726973213959644	CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj	470d5e6d8b9e02a8
+676	835	6726973215519648	lab_910_tudorsuiu.exe	ba7e7c16545d821b
