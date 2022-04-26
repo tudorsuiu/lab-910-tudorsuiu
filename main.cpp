@@ -3,11 +3,10 @@
 #include "UserInterface/Console.h"
 
 int main() {
-    Test test;
-    //test.all();
-
     RepositoryInFile<Product> repositoryInFile("products.txt");
-    Console console;
+    Service service(repositoryInFile);
+    Console console(service);
+
     console.runMenu();
     return 0;
 }

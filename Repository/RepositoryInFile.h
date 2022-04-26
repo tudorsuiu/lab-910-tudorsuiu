@@ -10,7 +10,7 @@
 #include <vector>
 #include "IRepository.h"
 
-template<class T> class RepositoryInFile : public IRepository<T> {
+template<class T> class RepositoryInFile {
 private:
     std::vector<T> elements;
     std::string fileName;
@@ -27,7 +27,6 @@ public:
     }
 
     virtual std::vector<T> getAll() {
-        loadFromFile();
         return this->elements;
     }
 

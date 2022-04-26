@@ -4,6 +4,8 @@
 
 #include "Service.h"
 
+Service::Service(RepositoryInFile<Product> &repositoryInFile) : repository(repositoryInFile) {}
+
 void Service::create(Product entity) {
     repository.addEntity(entity);
 }

@@ -10,6 +10,10 @@ Product::Product() {
     this->price = 0;
 }
 
+Product::Product(std::string args, char sep){
+    this->loadFromString(args, sep);
+}
+
 Product::Product(unsigned int code, std::string name, unsigned int price) {
     this->code = code;
     this->name = name;

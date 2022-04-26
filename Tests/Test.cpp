@@ -66,7 +66,8 @@ void Test::repository() {
 }
 
 void Test::service() {
-    Service service;
+    RepositoryInFile<Product> repositoryInMemory("tests.txt");
+    Service service(repositoryInMemory);
 
     Product p1(1, "croissant", 3);
     Product p2(2, "suc", 5);

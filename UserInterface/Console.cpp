@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Console.h"
 
-
+Console::Console(Service &service) : service(service) {}
 
 void Console::showMenu() {
     std::cout << '\n';

@@ -14,8 +14,10 @@
 class Service {
 private:
     //Repository repository;
-    IRepository<Product> &repository;
+    RepositoryInFile<Product> &repository;
 public:
+    Service(RepositoryInFile<Product> &repositoryInFile);
+
     /**
       * Add entity to repository
       * @param entity: ApartmentBill object

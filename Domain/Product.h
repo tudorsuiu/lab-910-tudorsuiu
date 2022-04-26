@@ -29,6 +29,8 @@ public:
      */
     Product(unsigned int code, std::string name, unsigned int price);
 
+    Product(std::string args, char sep);
+
     /**
      * Copy-constructor
      * @param product: Product - product
