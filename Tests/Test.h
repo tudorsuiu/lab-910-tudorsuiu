@@ -10,6 +10,7 @@ class Test {
 public:
     void domain();
     void repository();
+    void repositoryInFile();
     void service();
     void all();
 };

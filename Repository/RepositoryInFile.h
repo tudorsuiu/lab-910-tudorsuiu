@@ -15,22 +15,42 @@ private:
     std::vector<T> elements;
     std::string fileName;
 public:
+    /**
+     * Read from file
+     * @param name: string - file name
+     */
     RepositoryInFile(std::string name) {
         this->fileName = name;
         this->loadFromFile();
     }
 
+    /**
+     * Destructor
+     */
     ~RepositoryInFile() = default;
 
+    /**
+     * Add entity to file
+     * @param entity: T class object
+     */
     virtual void addEntity(T entity) override {
         this->elements.push_back(entity);
         this->saveToFile();
     }
 
+    /**
+     * Get all entities from file
+     * @return: Vector<class T> - all entities stored in file
+     */
     virtual std::vector<T> getAll() override {
         return this->elements;
     }
 
+    /**
+     * Update an entity from file
+     * @param code: unsigned int - entity code
+     * @param newEntity: T class object - updated entity
+     */
     virtual void updateEntity(unsigned int code, T newEntity) override {
         for(int i = 0; i < elements.size(); i++) {
             if(elements[i].getCode() == code) {
@@ -40,6 +60,10 @@ public:
         this->saveToFile();
     }
 
+    /**
+     * Delete an entity from file
+     * @param code: unsigned int - entity code
+     */
     virtual void deleteEntity(unsigned int code) override {
         int index;
         for(int i = 0; i < elements.size(); i++) {
@@ -51,6 +75,9 @@ public:
         this->saveToFile();
     }
 
+    /**
+     * Saves the elements from vector "elements" in file
+     */
     void saveToFile()
     {
         std::ofstream f(this->fileName);
@@ -60,6 +87,10 @@ public:
         f.close();
     }
 
+
+    /**
+     * Loads the elements from file into "elements" vector
+     */
     void loadFromFile()
     {
         std::string line;

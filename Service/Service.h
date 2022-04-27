@@ -17,8 +17,8 @@ private:
     IRepository<Product> &repository;
 public:
     /**
-     *
-     * @param iRepository
+     * Constructor
+     * @param iRepository: IRepository object - Interface
      */
     Service(IRepository<Product> &iRepository);
 
@@ -39,7 +39,7 @@ public:
      * @param index: int - Apartment bill location in repository
      * @param newEntity
      */
-    void update(int index, Product newEntity);
+    void update(unsigned int code, Product newEntity);
 
     /**
      * Delete an apartment bill from repository

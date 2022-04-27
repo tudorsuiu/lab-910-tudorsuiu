@@ -54,20 +54,55 @@ void Test::repository() {
     assert(repository.getAll()[3] == p4);
     assert(repository.getAll()[4] == p5);
 
-    repository.deleteEntity(repository.getPosByCode(2));
-    repository.deleteEntity(repository.getPosByCode(4));
-    repository.deleteEntity(repository.getPosByCode(5));
+    repository.deleteEntity(2);
+    repository.deleteEntity(4);
+    repository.deleteEntity(5);
     assert(repository.getAll().size() == 2);
 
-    repository.updateEntity(repository.getPosByCode(1), Product(1, "suc", 5));
-    repository.updateEntity(repository.getPosByCode(3), Product(2, "apa", 3));
+    repository.updateEntity(1, Product(1, "suc", 5));
+    repository.updateEntity(3, Product(2, "apa", 3));
     assert(repository.getAll()[0] == Product(1, "suc", 5));
     assert(repository.getAll()[1] == Product(2, "apa", 3));
 }
 
+void Test::repositoryInFile() {
+
+    RepositoryInFile<Product> repository("test.txt");
+
+    Product p1(1, "croissant", 3);
+    Product p2(2, "suc", 5);
+    Product p3(3, "ciocolata", 7);
+    Product p4(4, "popcorn", 4);
+    Product p5(5, "apa", 3);
+
+    repository.addEntity(p1);
+    repository.addEntity(p2);
+    repository.addEntity(p3);
+    repository.addEntity(p4);
+    repository.addEntity(p5);
+    assert(repository.getAll()[0] == p1);
+    assert(repository.getAll()[1] == p2);
+    assert(repository.getAll()[2] == p3);
+    assert(repository.getAll()[3] == p4);
+    assert(repository.getAll()[4] == p5);
+
+    repository.deleteEntity(2);
+    repository.deleteEntity(4);
+    repository.deleteEntity(5);
+    assert(repository.getAll().size() == 2);
+
+    repository.updateEntity(1, Product(1, "suc", 5));
+    repository.updateEntity(3, Product(2, "apa", 3));
+    assert(repository.getAll()[0] == Product(1, "suc", 5));
+    assert(repository.getAll()[1] == Product(2, "apa", 3));
+
+    repository.deleteEntity(1);
+    repository.deleteEntity(2);
+}
+
 void Test::service() {
-    RepositoryInFile<Product> repositoryInMemory("tests.txt");
-    Service service(repositoryInMemory);
+    Repository<Product> repository;
+    Service service(repository);
 
     Product p1(1, "croissant", 3);
     Product p2(2, "suc", 5);
@@ -91,8 +126,8 @@ void Test::service() {
     service.del(4);
     assert(service.read().size() == 2);
 
-    service.update(0, Product(1, "suc", 5));
-    service.update(1, Product(2, "apa", 3));
+    service.update(2, Product(1, "suc", 5));
+    service.update(5, Product(2, "apa", 3));
     assert(service.read()[0] == Product(1, "suc", 5));
     assert(service.read()[1] == Product(2, "apa", 3));
 }
@@ -101,5 +136,6 @@ void Test::all() {
     std::cout << "All tests passed!" << '\n' << '\n';
     domain();
     repository();
+    repositoryInFile();
     service();
 }

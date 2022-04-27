@@ -3,6 +3,9 @@
 #include "UserInterface/Console.h"
 
 int main() {
+    Test test;
+    test.all();
+
     RepositoryInFile<Product> repositoryInFile("products.txt");
     Service service(repositoryInFile);
     Console console(service);

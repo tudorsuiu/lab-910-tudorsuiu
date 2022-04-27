@@ -6,8 +6,9 @@
 #define LAB_910_TUDORSUIU_REPOSITORY_H
 
 #include <vector>
+#include "IRepository.h"
 
-template<class T> class Repository {
+template<class T> class Repository : public IRepository<T> {
 private:
     std::vector<T> entities;
 public:
@@ -33,24 +34,34 @@ public:
      * Add entity to repository
      * @param entity: T class object
      */
-    void addEntity(T entity) {
+    void addEntity(T entity) override {
         this->entities.push_back(entity);
     }
 
     /**
      * Update an entity from repository
      * @param index: int - entity location in repository
-     * @param newEntity: T class object
+     * @param newEntity: T class object - updated entity
      */
-    void updateEntity(int index, T newEntity) {
-        entities[index] = newEntity;
+    void updateEntity(unsigned int code, T newEntity) override {
+        for(int i = 0; i < entities.size(); i++) {
+            if(entities[i].getCode() == code) {
+                entities[i] = newEntity;
+            }
+        }
     }
 
     /**
      * Delete an entity from repository
      * @param index: int - entity location in repository
      */
-    void deleteEntity(int index) {
+    void deleteEntity(unsigned int code) override {
+        int index;
+        for(int i = 0; i < entities.size(); i++) {
+            if(entities[i].getCode() == code) {
+                index = i;
+            }
+        }
         entities.erase(entities.begin() + index);
     }
 
@@ -58,7 +69,7 @@ public:
      * Get all entities and returns them
      * @return: Vector<class T> - all entities stored in repository
      */
-    std::vector<T> getAll() {
+    std::vector<T> getAll() override {
         return this->entities;
     }
 

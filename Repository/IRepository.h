@@ -7,9 +7,29 @@
 
 template<class T> class IRepository {
 public:
+    /**
+     * Add entity
+     * @param entity: T class object
+     */
     virtual void addEntity(T entity) = 0;
+
+    /**
+     * Get all entities from file/memory
+     * @return: Vector<class T> - all entities stored in file/memory
+     */
     virtual std::vector<T> getAll() = 0;
+
+    /**
+     * Update entity
+     * @param code: unsigned int - entity code
+     * @param newEntity: T class object - updated entity
+     */
     virtual void updateEntity(unsigned int code, T newEntity) = 0;
+
+    /**
+     * Delete entity
+     * @param code: unsigned int - entity code
+     */
     virtual void deleteEntity(unsigned int code) = 0;
 };
 
