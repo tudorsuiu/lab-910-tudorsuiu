@@ -40,15 +40,14 @@ void Console::runMenu() {
                 break;
             }
             case '3': {
+                unsigned int code;
+                std::cout << "Update product with code:";
+                std::cin >> code;
+
                 Product newProduct;
                 std::cin >> newProduct;
 
-                int index;
-                index = newProduct.getCode() - 1;
-
-                if(index != -1) {
-                    service.update(index, newProduct);
-                }
+                service.update(code, newProduct);
                 break;
             }
             case '4': {
@@ -56,10 +55,7 @@ void Console::runMenu() {
                 std::cout << "Delete product with code:";
                 std::cin >> code;
 
-                int index;
-                index = code - 1;
-
-                service.del(index);
+                service.del(code);
                 break;
             }
             case 'x': {

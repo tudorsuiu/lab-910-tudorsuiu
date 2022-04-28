@@ -42,10 +42,10 @@ public:
     void update(unsigned int code, Product newEntity);
 
     /**
-     * Delete an apartment bill from repository
-     * @param index: int - Apartment bill location in repository
+     * Delete product
+     * @param code: unsigned int - product code
      */
-    void del(int index);
+    void del(unsigned int code);
 };
 
 

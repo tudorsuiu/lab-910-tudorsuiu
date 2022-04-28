@@ -18,6 +18,6 @@ void Service::update(unsigned int code, Product newEntity) {
     repository.updateEntity(code, newEntity);
 }
 
-void Service::del(int index) {
-    repository.deleteEntity(index);
+void Service::del(unsigned int code) {
+    repository.deleteEntity(code);
 }
