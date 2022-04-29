@@ -21,16 +21,23 @@ public:
 
     /**
      * Update entity
-     * @param code: unsigned int - entity code
+     * @param index: unsigned int - entity index
      * @param newEntity: T class object - updated entity
      */
-    virtual void updateEntity(unsigned int code, T newEntity) = 0;
+    virtual void updateEntity(unsigned int index, T newEntity) = 0;
 
     /**
      * Delete entity
-     * @param code: unsigned int - entity code
+     * @param index: unsigned int - entity index
      */
-    virtual void deleteEntity(unsigned int code) = 0;
+    virtual void deleteEntity(unsigned int index) = 0;
+
+    /**
+     * Get position by object index
+     * @param index: unsigned int - object index
+     * @return: int - object position
+     */
+    virtual int getPosByIndex(unsigned int index) = 0;
 };
 
 

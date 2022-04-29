@@ -6,6 +6,7 @@
 #include "Product.h"
 
 Product::Product() {
+    this->index = 0;
     this->code = 0;
     this->price = 0;
 }
@@ -14,19 +15,29 @@ Product::Product(std::string args, char sep){
     this->loadFromString(args, sep);
 }
 
-Product::Product(unsigned int code, std::string name, unsigned int price) {
+Product::Product(unsigned int index, unsigned int code, std::string name, unsigned int price) {
+    this->index = index;
     this->code = code;
     this->name = name;
     this->price = price;
 }
 
 Product::Product(const Product &product) {
+    this->index = product.index;
     this->code = product.code;
     this->name = product.name;
     this->price = product.price;
 }
 
 Product::~Product() = default;
+
+unsigned int Product::getIndex() {
+    return this->index;
+}
+
+void Product::setIndex(unsigned int index) {
+    this->index = index;
+}
 
 unsigned int Product::getCode() {
     return this->code;
@@ -49,7 +60,8 @@ unsigned int Product::getPrice() {
 }
 
 std::string Product::toStringDelimiter(char sep) {
-    return std::to_string(this->code) + sep + this->name + sep + std::to_string(this->price);
+    return std::to_string(this->index) + sep +std::to_string(this->code) +
+    sep + this->name + sep + std::to_string(this->price);
 }
 
 void Product::loadFromString(std::string args, char sep) {
@@ -59,11 +71,13 @@ void Product::loadFromString(std::string args, char sep) {
     while (getline (ss, object, sep)) {
         elements.push_back(object);
     }
-    if(elements.size() == 3) {
-        std::stringstream c(elements[0]);
+    if(elements.size() == 4) {
+        std::stringstream i(elements[0]);
+        i >> this->index;
+        std::stringstream c(elements[1]);
         c >> this->code;
-        this->name = elements[1];
-        std::stringstream p(elements[2]);
+        this->name = elements[2];
+        std::stringstream p(elements[3]);
         p >> this->price;
     }
 }
@@ -73,6 +87,7 @@ void Product::setPrice(unsigned int price) {
 }
 
 Product &Product::operator=(const Product &product) {
+    this->index = product.index;
     this->code = product.code;
     this->name = product.name;
     this->price = product.price;
@@ -113,6 +128,10 @@ bool Product::operator!=(const Product &product) const {
 }
 
 std::istream &operator>>(std::istream &is, Product &product) {
+    unsigned int index;
+    std::cout << "Enter product index:"; is >> index;
+    product.index = index;
+
     unsigned int code;
     std::cout << "Enter product code:"; is >> code;
     product.code = code;
@@ -129,9 +148,10 @@ std::istream &operator>>(std::istream &is, Product &product) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Product &product) {
-    os << "Product code: " << product.code << '\n' <<
-    "Product name: " << product.name << '\n' << "Product price: " <<
-    product.price << '\n';
+    os << "Product index: " << product.index << '\n' <<
+    "Product code: " << product.code << '\n' <<
+    "Product name: " << product.name << '\n' <<
+    "Product price: " << product.price << '\n';
 
     return os;
 }

@@ -12,6 +12,7 @@
 
 class Product {
 private:
+    unsigned int index;
     unsigned int code;
     std::string name;
     unsigned int price;
@@ -23,11 +24,12 @@ public:
 
     /**
      * Constructor with parameters
+     * @param index: unsigned int - product index
      * @param code: unsigned int - product code
      * @param name: string - product name
      * @param price: unsigned int - product price
      */
-    Product(unsigned int code, std::string name, unsigned int price);
+    Product(unsigned int index, unsigned int code, std::string name, unsigned int price);
 
     Product(std::string args, char sep);
 
@@ -41,6 +43,10 @@ public:
      * Destructor
      */
     ~Product();
+
+    unsigned int getIndex();
+
+    void setIndex(unsigned int index);
 
     /**
      * Code getter
@@ -78,8 +84,18 @@ public:
      */
     void setPrice(unsigned int price);
 
+    /**
+     * To string delimeter
+     * @param sep: char - separator
+     * @return: string - Product object transformed into string
+     */
     std::string toStringDelimiter(char sep);
 
+    /**
+     * Load Product from a string
+     * @param args: string - given string
+     * @param sep: char - separator
+     */
     void loadFromString(std::string args, char sep);
 
     Product& operator=(const Product& product);

@@ -48,12 +48,12 @@ public:
 
     /**
      * Update an entity from file
-     * @param code: unsigned int - entity code
+     * @param index: unsigned int - entity index
      * @param newEntity: T class object - updated entity
      */
-    virtual void updateEntity(unsigned int code, T newEntity) override {
+    virtual void updateEntity(unsigned int index, T newEntity) override {
         for(int i = 0; i < elements.size(); i++) {
-            if(elements[i].getCode() == code) {
+            if(elements[i].getIndex() == index) {
                 elements[i] = newEntity;
             }
         }
@@ -64,15 +64,29 @@ public:
      * Delete an entity from file
      * @param code: unsigned int - entity code
      */
-    virtual void deleteEntity(unsigned int code) override {
-        int index;
+    virtual void deleteEntity(unsigned int index) override {
+        int position;
         for(int i = 0; i < elements.size(); i++) {
-            if(elements[i].getCode() == code) {
-                index = i;
+            if(elements[i].getIndex() == index) {
+                position = i;
             }
         }
-        elements.erase(elements.begin() + index);
+        elements.erase(elements.begin() + position);
         this->saveToFile();
+    }
+
+    /**
+     * Get position by object index
+     * @param index: unsigned int - object index
+     * @return: int - object position
+     */
+    int getPosByIndex(unsigned int index) {
+        for(int i = 0; i < elements.size(); i++) {
+            if(elements[i].getIndex() == index) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**

@@ -1,1 +1,2 @@
-2107 mata 5
+1 1 corn 10
+2 2 lapte 10

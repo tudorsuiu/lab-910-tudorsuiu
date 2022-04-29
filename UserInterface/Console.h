@@ -7,14 +7,16 @@
 
 
 #include "../Domain/Product.h"
-#include "../Service/Service.h"
+#include "../Service/ProductService.h"
 
 class Console {
 private:
-    Service service;
+    ProductService service;
 public:
-    Console(Service &service);
+    Console(ProductService &service);
     void showMenu();
+    void showAdminMenu();
+    void showBuyerMenu();
     void runMenu();
 };
 

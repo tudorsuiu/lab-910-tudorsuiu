@@ -43,9 +43,9 @@ public:
      * @param index: int - entity location in repository
      * @param newEntity: T class object - updated entity
      */
-    void updateEntity(unsigned int code, T newEntity) override {
+    void updateEntity(unsigned int index, T newEntity) override {
         for(int i = 0; i < entities.size(); i++) {
-            if(entities[i].getCode() == code) {
+            if(entities[i].getIndex() == index) {
                 entities[i] = newEntity;
             }
         }
@@ -55,14 +55,14 @@ public:
      * Delete an entity from repository
      * @param index: int - entity location in repository
      */
-    void deleteEntity(unsigned int code) override {
-        int index;
+    void deleteEntity(unsigned int index) override {
+        int position;
         for(int i = 0; i < entities.size(); i++) {
-            if(entities[i].getCode() == code) {
-                index = i;
+            if(entities[i].getIndex() == index) {
+                position = i;
             }
         }
-        entities.erase(entities.begin() + index);
+        entities.erase(entities.begin() + position);
     }
 
     /**
@@ -74,13 +74,13 @@ public:
     }
 
     /**
-     * Get position by product code
-     * @param code: unsigned int - product code
-     * @return: int - product position
+     * Get position by object index
+     * @param index: unsigned int - object index
+     * @return: int - object position
      */
-    int getPosByCode(unsigned int code) {
+    int getPosByIndex(unsigned int index) {
         for(int i = 0; i < entities.size(); i++) {
-            if(entities[i].getCode() == code) {
+            if(entities[i].getIndex() == index) {
                 return i;
             }
         }

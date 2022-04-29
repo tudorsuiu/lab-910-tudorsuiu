@@ -144,12 +144,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Service/Service.cpp",
+			"path" : "Service/ProductService.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Service/Service.h",
+			"path" : "Service/ProductService.h",
 			"sourceGroupIndex" : 1
 		},
 		{

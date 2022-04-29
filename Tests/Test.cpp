@@ -5,23 +5,27 @@
 #include "Test.h"
 #include "../Domain/Product.h"
 #include "../Repository/Repository.h"
-#include "../Service/Service.h"
+#include "../Service/ProductService.h"
 #include <cassert>
 #include <iostream>
 
 void Test::domain() {
     Product product;
+    assert(product.getIndex() == 0);
     assert(product.getCode() == 0);
     assert(product.getPrice() == 0);
 
+    product.setIndex(1);
     product.setCode(1);
     product.setName("corn");
     product.setPrice(5);
+    assert(product.getIndex() == 1);
     assert(product.getCode() == 1);
     assert(product.getName() == "corn");
     assert(product.getPrice() == 5);
 
-    Product product1(2, "corn", 6);
+    Product product1(2, 2, "corn", 6);
+    assert(product1.getIndex() == 2);
     assert(product1.getCode() == 2);
     assert(product1.getName() == "corn");
     assert(product1.getPrice() == 6);
@@ -29,6 +33,7 @@ void Test::domain() {
     assert(product == product1 == false);
 
     product = product1;
+    assert(product.getIndex() == 2);
     assert(product.getCode() == 2);
     assert(product.getName() == "corn");
     assert(product.getPrice() == 6);
@@ -37,11 +42,11 @@ void Test::domain() {
 void Test::repository() {
     Repository<Product> repository;
 
-    Product p1(1, "croissant", 3);
-    Product p2(2, "suc", 5);
-    Product p3(3, "ciocolata", 7);
-    Product p4(4, "popcorn", 4);
-    Product p5(5, "apa", 3);
+    Product p1(1, 1, "croissant", 3);
+    Product p2(2, 2, "suc", 5);
+    Product p3(3, 3, "ciocolata", 7);
+    Product p4(4, 4, "popcorn", 4);
+    Product p5(5, 5, "apa", 3);
 
     repository.addEntity(p1);
     repository.addEntity(p2);
@@ -59,21 +64,21 @@ void Test::repository() {
     repository.deleteEntity(5);
     assert(repository.getAll().size() == 2);
 
-    repository.updateEntity(1, Product(1, "suc", 5));
-    repository.updateEntity(3, Product(2, "apa", 3));
-    assert(repository.getAll()[0] == Product(1, "suc", 5));
-    assert(repository.getAll()[1] == Product(2, "apa", 3));
+    repository.updateEntity(1, Product(1, 1, "suc", 5));
+    repository.updateEntity(3, Product(2, 2, "apa", 3));
+    assert(repository.getAll()[0] == Product(1, 1, "suc", 5));
+    assert(repository.getAll()[1] == Product(2, 2, "apa", 3));
 }
 
 void Test::repositoryInFile() {
 
     RepositoryInFile<Product> repository("test.txt");
 
-    Product p1(1, "croissant", 3);
-    Product p2(2, "suc", 5);
-    Product p3(3, "ciocolata", 7);
-    Product p4(4, "popcorn", 4);
-    Product p5(5, "apa", 3);
+    Product p1(1, 1, "croissant", 3);
+    Product p2(2, 2, "suc", 5);
+    Product p3(3, 3, "ciocolata", 7);
+    Product p4(4, 4, "popcorn", 4);
+    Product p5(5, 5, "apa", 3);
 
     repository.addEntity(p1);
     repository.addEntity(p2);
@@ -91,10 +96,10 @@ void Test::repositoryInFile() {
     repository.deleteEntity(5);
     assert(repository.getAll().size() == 2);
 
-    repository.updateEntity(1, Product(1, "suc", 5));
-    repository.updateEntity(3, Product(2, "apa", 3));
-    assert(repository.getAll()[0] == Product(1, "suc", 5));
-    assert(repository.getAll()[1] == Product(2, "apa", 3));
+    repository.updateEntity(1, Product(1, 1, "suc", 5));
+    repository.updateEntity(3, Product(2, 2, "apa", 3));
+    assert(repository.getAll()[0] == Product(1, 1, "suc", 5));
+    assert(repository.getAll()[1] == Product(2, 2, "apa", 3));
 
     repository.deleteEntity(1);
     repository.deleteEntity(2);
@@ -102,13 +107,13 @@ void Test::repositoryInFile() {
 
 void Test::service() {
     Repository<Product> repository;
-    Service service(repository);
+    ProductService service(repository);
 
-    Product p1(1, "croissant", 3);
-    Product p2(2, "suc", 5);
-    Product p3(3, "ciocolata", 7);
-    Product p4(4, "popcorn", 4);
-    Product p5(5, "apa", 3);
+    Product p1(1, 1, "croissant", 3);
+    Product p2(2, 2, "suc", 5);
+    Product p3(3, 3, "ciocolata", 7);
+    Product p4(4, 4, "popcorn", 4);
+    Product p5(5, 5, "apa", 3);
 
     service.create(p1);
     service.create(p2);
@@ -126,10 +131,10 @@ void Test::service() {
     service.del(4);
     assert(service.read().size() == 2);
 
-    service.update(2, Product(1, "suc", 5));
-    service.update(5, Product(2, "apa", 3));
-    assert(service.read()[0] == Product(1, "suc", 5));
-    assert(service.read()[1] == Product(2, "apa", 3));
+    service.update(2, Product(1, 1, "suc", 5));
+    service.update(5, Product(2, 2, "apa", 3));
+    assert(service.read()[0] == Product(1, 1, "suc", 5));
+    assert(service.read()[1] == Product(2, 2, "apa", 3));
 }
 
 void Test::all() {
