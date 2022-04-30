@@ -79,6 +79,18 @@ build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj: CXX_COMPILER__lab_910
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
   OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests
 
+build CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Banknote.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Banknote.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Domain
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Service/BanknoteService.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Service/BanknoteService.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Service\BanknoteService.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Service
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab_910_tudorsuiu
@@ -87,7 +99,7 @@ build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj: CXX_COMPILER__lab_910
 #############################################
 # Link the executable lab_910_tudorsuiu.exe
 
-build lab_910_tudorsuiu.exe: CXX_EXECUTABLE_LINKER__lab_910_tudorsuiu_Debug CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Service/ProductService.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj
+build lab_910_tudorsuiu.exe: CXX_EXECUTABLE_LINKER__lab_910_tudorsuiu_Debug CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Service/ProductService.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Service/BanknoteService.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir

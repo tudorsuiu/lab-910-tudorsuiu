@@ -13,7 +13,6 @@
 
 class ProductService {
 private:
-    //Repository repository;
     IRepository<Product> &repository;
 public:
     /**

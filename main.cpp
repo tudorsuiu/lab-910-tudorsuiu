@@ -6,9 +6,11 @@ int main() {
     Test test;
     test.all();
 
-    RepositoryInFile<Product> repositoryInFile("products.txt");
-    ProductService service(repositoryInFile);
-    Console console(service);
+    RepositoryInFile<Product> productInFile("products.txt");
+    RepositoryInFile<Banknote> banknoteInFile("banknotes.txt");
+    ProductService productService(productInFile);
+    BanknoteService banknoteService(banknoteInFile);
+    Console console(productService, banknoteService);
 
     console.runMenu();
     return 0;

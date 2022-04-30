@@ -3,4 +3,4 @@ project(lab_910_tudorsuiu)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(lab_910_tudorsuiu main.cpp Domain/Product.cpp Domain/Product.h Repository/Repository.h Service/ProductService.cpp Service/ProductService.h UserInterface/Console.cpp UserInterface/Console.h Tests/Test.cpp Tests/Test.h Repository/RepositoryInFile.h Repository/IRepository.h)
+add_executable(lab_910_tudorsuiu main.cpp Domain/Product.cpp Domain/Product.h Repository/Repository.h Service/ProductService.cpp Service/ProductService.h UserInterface/Console.cpp UserInterface/Console.h Tests/Test.cpp Tests/Test.h Repository/RepositoryInFile.h Repository/IRepository.h Domain/Banknote.cpp Domain/Banknote.h Service/BanknoteService.cpp Service/BanknoteService.h)

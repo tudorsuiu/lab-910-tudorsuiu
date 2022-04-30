@@ -66,7 +66,7 @@ std::string Product::toStringDelimiter(char sep) {
 
 void Product::loadFromString(std::string args, char sep) {
     std::vector<std::string> elements;
-    std::stringstream ss (args);
+    std::stringstream ss(args);
     std::string object;
     while (getline (ss, object, sep)) {
         elements.push_back(object);

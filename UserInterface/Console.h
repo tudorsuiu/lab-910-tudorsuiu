@@ -8,12 +8,14 @@
 
 #include "../Domain/Product.h"
 #include "../Service/ProductService.h"
+#include "../Service/BanknoteService.h"
 
 class Console {
 private:
-    ProductService service;
+    ProductService productService;
+    BanknoteService banknoteService;
 public:
-    Console(ProductService &service);
+    Console(ProductService &serviceProduct, BanknoteService &serviceBanknote);
     void showMenu();
     void showAdminMenu();
     void showBuyerMenu();

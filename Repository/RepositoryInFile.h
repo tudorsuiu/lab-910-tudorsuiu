@@ -80,7 +80,7 @@ public:
      * @param index: unsigned int - object index
      * @return: int - object position
      */
-    int getPosByIndex(unsigned int index) {
+    int getPosByIndex(unsigned int index) override {
         for(int i = 0; i < elements.size(); i++) {
             if(elements[i].getIndex() == index) {
                 return i;

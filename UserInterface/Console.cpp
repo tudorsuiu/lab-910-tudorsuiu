@@ -5,7 +5,8 @@
 #include <iostream>
 #include "Console.h"
 
-Console::Console(ProductService &service) : service(service) {}
+Console::Console(ProductService &serviceProduct, BanknoteService &serviceBanknote) : productService(serviceProduct),
+                                                                                     banknoteService(serviceBanknote) {}
 
 void Console::showMenu() {
     std::cout << '\n';
@@ -20,10 +21,14 @@ void Console::showMenu() {
 void Console::showAdminMenu() {
     std::cout << '\n';
     std::cout << "_________---ADMIN MENU---_________" << '\n';
-    std::cout << "1. Add product" << '\n';
-    std::cout << "2. Check product" << '\n';
-    std::cout << "3. Update product" << '\n';
+    std::cout << "1. Add product." << '\n';
+    std::cout << "2. Check products." << '\n';
+    std::cout << "3. Update product." << '\n';
     std::cout << "4. Delete product." << '\n';
+    std::cout << "5. Add banknote." << '\n';
+    std::cout << "6. Check banknotes." << '\n';
+    std::cout << "7. Update banknote." << '\n';
+    std::cout << "8. Delete banknote." << '\n';
     std::cout << "x. Exit." << '\n';
     std::cout << "__________________________________" << '\n';
     std::cout << "Select option:";
@@ -32,9 +37,9 @@ void Console::showAdminMenu() {
 void Console::showBuyerMenu() {
     std::cout << '\n';
     std::cout << "_________---BUYER MENU---_________" << '\n';
-    std::cout << "1. Show products" << '\n';
-    std::cout << "2. Insert money" << '\n';
-    std::cout << "3. Choose product" << '\n';
+    std::cout << "1. Show products." << '\n';
+    std::cout << "2. Insert money." << '\n';
+    std::cout << "3. Choose product." << '\n';
     std::cout << "x. Exit." << '\n';
     std::cout << "__________________________________" << '\n';
     std::cout << "Select option:";
@@ -58,12 +63,12 @@ void Console::runMenu() {
                             Product product;
                             std::cin >> product;
 
-                            service.create(product);
+                            productService.create(product);
                             break;
                         }
                         case '2': {
-                            for(int i = 0; i < service.read().size(); i++) {
-                                std::cout << service.read()[i] << '\n';
+                            for(int i = 0; i < productService.read().size(); i++) {
+                                std::cout << productService.read()[i] << '\n';
                             }
                             break;
                         }
@@ -75,15 +80,47 @@ void Console::runMenu() {
                             Product newProduct;
                             std::cin >> newProduct;
 
-                            service.update(index, newProduct);
+                            productService.update(index, newProduct);
                             break;
                         }
                         case '4': {
                             unsigned int index;
-                            std::cout << "Delete product with code:";
+                            std::cout << "Delete product with index:";
                             std::cin >> index;
 
-                            service.del(index);
+                            productService.del(index);
+                            break;
+                        }
+                        case '5': {
+                            Banknote banknote;
+                            std::cin >> banknote;
+
+                            banknoteService.create(banknote);
+                            break;
+                        }
+                        case '6': {
+                            for(int i = 0; i < banknoteService.read().size(); i++) {
+                                std::cout << banknoteService.read()[i] << '\n';
+                            }
+                            break;
+                        }
+                        case '7': {
+                            unsigned int index;
+                            std::cout << "Update banknote with index:";
+                            std::cin >> index;
+
+                            Banknote newBanknote;
+                            std::cin >> newBanknote;
+
+                            banknoteService.update(index, newBanknote);
+                            break;
+                        }
+                        case '8': {
+                            unsigned int index;
+                            std::cout << "Delete banknotes with index:";
+                            std::cin >> index;
+
+                            banknoteService.del(index);
                             break;
                         }
                         case 'x': {
@@ -106,9 +143,9 @@ void Console::runMenu() {
                     std::cout << '\n';
                     switch(buyerOption) {
                         case '1': {
-                            for(int i = 0; i < service.read().size(); i++) {
+                            for(int i = 0; i < productService.read().size(); i++) {
                                 Product product;
-                                product = service.read()[i];
+                                product = productService.read()[i];
                                 std::cout << "Product code: " << product.getCode() << '\n' <<
                                 "Product name: " << product.getName() << '\n' <<
                                 "Product price: " << product.getPrice() << '\n' << '\n';
@@ -116,23 +153,9 @@ void Console::runMenu() {
                             break;
                         }
                         case '2': {
-                            unsigned int credit;
-                            std::cout << "Insert credit:";
-                            std::cin >> credit;
-                            if(credit == 1 || credit == 5 || credit == 10 || credit == 50 || credit == 100) {
-                                total += credit;
-                            }
-                            else {
-                                std::cout << "Our vending machine doesn't accept this type of currency." << '\n';
-                            }
                             break;
                         }
                         case '3': {
-                            unsigned int code;
-                            std::cout << "Product code:";
-                            std::cin >> code;
-                            std::cout << "Please pick up your change: " << total - service.getProductByCode(code).getPrice() << " RON." << '\n';
-                            total = 0;
                             break;
                         }
                         case 'x': {

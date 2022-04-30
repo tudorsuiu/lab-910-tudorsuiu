@@ -44,8 +44,16 @@ public:
      */
     ~Product();
 
+    /**
+     * Index getter
+     * @return: unsigned int - product index
+     */
     unsigned int getIndex();
 
+    /**
+     * Index setter
+     * @param index: unsigned int - product index
+     */
     void setIndex(unsigned int index);
 
     /**
