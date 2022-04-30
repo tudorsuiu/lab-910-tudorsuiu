@@ -31,6 +31,11 @@ public:
      */
     Product(unsigned int index, unsigned int code, std::string name, unsigned int price);
 
+    /**
+     * Create product object from string
+     * @param args: string - given string
+     * @param sep: char - separator
+     */
     Product(std::string args, char sep);
 
     /**
@@ -93,7 +98,7 @@ public:
     void setPrice(unsigned int price);
 
     /**
-     * To string delimeter
+     * To string delimiter
      * @param sep: char - separator
      * @return: string - Product object transformed into string
      */

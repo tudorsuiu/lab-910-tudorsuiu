@@ -28,7 +28,7 @@ public:
     void create(Product entity);
 
     /**
-     * Read product with given code
+     * Read product with given index
      * @param index: unsigned int - product index
      * @return: Product object - product with given index
      */

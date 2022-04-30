@@ -14,21 +14,85 @@ private:
     unsigned int value;
     unsigned int noOccurrences;
 public:
+    /**
+     * Constructor
+     */
     Banknote();
+
+    /**
+     * Cosntructor with parameters
+     * @param index: unsigned int - banknote index
+     * @param value: unsigned int - banknote value
+     * @param noOccurrences: unsigned int - number of banknotes
+     */
     Banknote(unsigned int index, unsigned int value, unsigned int noOccurrences);
+
+    /**
+     * Create banknote object from string
+     * @param args: string - given string
+     * @param sep: char - separator
+     */
     Banknote(std::string args, char sep);
+
+    /**
+     * Copy-constructor
+     * @param banknote: Banknote - banknote
+     */
     Banknote(const Banknote& banknote);
+
+    /**
+     * Destructor
+     */
     ~Banknote();
 
-
+    /**
+     * Index getter
+     * @return: unsigned int - banknote index
+     */
     unsigned int getIndex();
+
+    /**
+     * Index setter
+     * @param index: unsigned int - banknote index
+     */
     void setIndex(unsigned int index);
+
+    /**
+     * Value getter
+     * @return: unsigned int - banknote value
+     */
     unsigned int getValue();
+
+    /**
+     * Value setter
+     * @param value: unsigned int - banknote value
+     */
     void setValue(unsigned int value);
+
+    /**
+     * Number of banknotes setter
+     * @return: unsigned int - number of banknotes
+     */
     unsigned int getNoOccurrences();
+
+    /**
+     * Number of banknotes getter
+     * @param noOccurrences: unsigned int - number of banknotes
+     */
     void getNoOccurrences(unsigned int noOccurrences);
 
+    /**
+     * To string delimiter
+     * @param sep: char - separator
+     * @return: string - Banknote object transformed into string
+     */
     std::string toStringDelimiter(char sep);
+
+    /**
+     * Load banknote from a string
+     * @param args: string - given string
+     * @param sep: char - separator
+     */
     void loadFromString(std::string args, char sep);
 
     Banknote& operator=(const Banknote &banknote);

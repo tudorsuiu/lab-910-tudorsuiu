@@ -33,3 +33,8 @@ Banknote BanknoteService::getBanknoteByValue(unsigned int value) {
         }
     }
 }
+
+unsigned int BanknoteService::change(unsigned int productPrice,
+                                       unsigned int insertedAmount) {
+
+}
