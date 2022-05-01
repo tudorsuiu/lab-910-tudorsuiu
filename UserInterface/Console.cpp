@@ -38,8 +38,7 @@ void Console::showBuyerMenu() {
     std::cout << '\n';
     std::cout << "_________---BUYER MENU---_________" << '\n';
     std::cout << "1. Show products." << '\n';
-    std::cout << "2. Insert money." << '\n';
-    std::cout << "3. Choose product." << '\n';
+    std::cout << "2. Buy product." << '\n';
     std::cout << "x. Exit." << '\n';
     std::cout << "__________________________________" << '\n';
     std::cout << "Select option:";
@@ -135,9 +134,7 @@ void Console::runMenu() {
             }
             case 'b': {
                 char buyerOption;
-                unsigned int total = 0;
                 do {
-                    std::cout << "Total: " << total << " RON." << '\n';
                     showBuyerMenu();
                     std::cin >> buyerOption;
                     std::cout << '\n';
@@ -153,9 +150,67 @@ void Console::runMenu() {
                             break;
                         }
                         case '2': {
-                            break;
-                        }
-                        case '3': {
+                            unsigned int code;
+                            std::cout << "Please choose a product:";
+                            std::cin >> code;
+
+                            unsigned int inserted = 0;
+                            unsigned int credit;
+                            Product product = productService.getProductByCode(code);
+                            std::vector<Banknote> copy = banknoteService.read();
+
+                            while(inserted < product.getPrice()) {
+                                std::cout << "Please insert credit (1/5/10/50/100):";
+                                std::cin >> credit;
+
+                                if(credit == 1 || credit == 5 || credit == 10 || credit == 50 || credit == 100) {
+                                    Banknote banknote = (banknoteService.getBanknoteByValue(credit));
+                                    Banknote newBanknote(banknote.getIndex(), banknote.getValue(), banknote.getNoOccurrences() + 1);
+
+                                    banknoteService.update(banknote.getIndex(), newBanknote);
+                                    inserted += credit;
+                                }
+                                else {
+                                    std::cout << "We don't accept that type of currency." << '\n';
+                                }
+                            }
+
+                            std::vector<Banknote> result = banknoteService.change(product.getPrice(), inserted);
+
+                            if(inserted - product.getPrice() == 0) {
+                                std::cout << "Thanks for your purchase!" << '\n';
+                            }
+                            else {
+                                unsigned int checker = 0;
+                                for(int i = 0; i < result.size(); i++) {
+                                    checker += result[i].getNoOccurrences();
+                                }
+
+                                if (checker == 0) {
+                                    banknoteService.updateAll(copy);
+                                    std::cout << "Our vending machine doesn't have money. Pick up your money." << '\n';
+                                }
+                                else {
+                                    unsigned int change = 0;
+                                    for(int i = 0; i < result.size(); i++) {
+                                        change += result[i].getValue() * result[i].getNoOccurrences();
+                                    }
+
+                                    if(change == inserted - product.getPrice()) {
+                                        std::cout << "Please pick up your change: " << '\n';
+                                        for(int i = 0; i < result.size(); i++) {
+                                            if (result[i].getNoOccurrences() != 0) {
+                                                std::cout << result[i].getNoOccurrences() << " banknotes of " << result[i].getValue() << " RON." << '\n';
+                                            }
+                                        }
+                                        std::cout << "A total of: " << change << " RON." << '\n'  << "Thanks for your purchase!" << '\n';
+                                    }
+                                    else {
+                                        banknoteService.updateAll(copy);
+                                        std::cout << "Our vending machine doesn't have money. Pick up your money." << '\n';
+                                    }
+                                }
+                            }
                             break;
                         }
                         case 'x': {

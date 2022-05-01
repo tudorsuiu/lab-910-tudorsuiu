@@ -32,4 +32,5 @@ Product ProductService::getProductByCode(unsigned int code) {
             return repository.getAll()[i];
         }
     }
+    return Product(0, 0, "", 0);
 }

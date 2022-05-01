@@ -33,7 +33,7 @@ public:
      * Add entity to file
      * @param entity: T class object
      */
-    virtual void addEntity(T entity) override {
+    void addEntity(T entity) override {
         this->elements.push_back(entity);
         this->saveToFile();
     }
@@ -42,7 +42,7 @@ public:
      * Get all entities from file
      * @return: Vector<class T> - all entities stored in file
      */
-    virtual std::vector<T> getAll() override {
+    std::vector<T> getAll() override {
         return this->elements;
     }
 
@@ -51,7 +51,7 @@ public:
      * @param index: unsigned int - entity index
      * @param newEntity: T class object - updated entity
      */
-    virtual void updateEntity(unsigned int index, T newEntity) override {
+    void updateEntity(unsigned int index, T newEntity) override {
         for(int i = 0; i < elements.size(); i++) {
             if(elements[i].getIndex() == index) {
                 elements[i] = newEntity;
@@ -64,7 +64,7 @@ public:
      * Delete an entity from file
      * @param code: unsigned int - entity code
      */
-    virtual void deleteEntity(unsigned int index) override {
+    void deleteEntity(unsigned int index) override {
         int position;
         for(int i = 0; i < elements.size(); i++) {
             if(elements[i].getIndex() == index) {

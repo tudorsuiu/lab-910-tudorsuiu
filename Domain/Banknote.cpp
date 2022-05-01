@@ -51,7 +51,7 @@ unsigned int Banknote::getNoOccurrences() {
     return this->noOccurrences;
 }
 
-void Banknote::getNoOccurrences(unsigned int noOccurrences) {
+void Banknote::setNoOccurrences(unsigned int noOccurrences) {
     this->noOccurrences = noOccurrences;
 }
 
@@ -97,6 +97,16 @@ std::istream &operator>>(std::istream &is, Banknote &banknote) {
     banknote.noOccurrences = noOccurrences;
 
     return is;
+}
+
+bool Banknote::operator==(const Banknote &banknote) const {
+    return index == banknote.index &&
+           value == banknote.value &&
+           noOccurrences == banknote.noOccurrences;
+}
+
+bool Banknote::operator!=(const Banknote &banknote) const {
+    return !(banknote == *this);
 }
 
 std::ostream &operator<<(std::ostream &os, const Banknote &banknote) {

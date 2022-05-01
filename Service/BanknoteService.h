@@ -53,6 +53,12 @@ public:
     void del(unsigned int index);
 
     /**
+     * Updates all entities from repository
+     * @param newVector: vector<Banknote> - our new vector
+     */
+    void updateAll(std::vector<Banknote> newVector);
+
+    /**
      * Get position by banknote value
      * @param value: unsigned int - banknote value
      * @return: Banknote object - banknote with given code
@@ -60,12 +66,12 @@ public:
     Banknote getBanknoteByValue(unsigned int value);
 
     /**
-     * 
-     * @param productPrice
-     * @param insertedAmount
-     * @return
+     * Determine the banknotes that our customer is picking up as change
+     * @param productPrice: unsigned int - product price
+     * @param insertedAmount: unsigned int - inserted amount
+     * @return: vector<Banknote> - banknotes that our customer is picking up as change
      */
-    unsigned int change(unsigned int productPrice, unsigned int insertedAmount);
+    std::vector<Banknote> change(unsigned int productPrice, unsigned int insertedAmount);
 };
 
 

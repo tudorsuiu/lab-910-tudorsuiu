@@ -70,16 +70,16 @@ public:
     void setValue(unsigned int value);
 
     /**
-     * Number of banknotes setter
+     * Number of banknotes getter
      * @return: unsigned int - number of banknotes
      */
     unsigned int getNoOccurrences();
 
     /**
-     * Number of banknotes getter
+     * Number of banknotes setter
      * @param noOccurrences: unsigned int - number of banknotes
      */
-    void getNoOccurrences(unsigned int noOccurrences);
+    void setNoOccurrences(unsigned int noOccurrences);
 
     /**
      * To string delimiter
@@ -96,6 +96,9 @@ public:
     void loadFromString(std::string args, char sep);
 
     Banknote& operator=(const Banknote &banknote);
+
+    bool operator==(const Banknote &rhs) const;
+    bool operator!=(const Banknote &rhs) const;
 
     friend std::istream &operator>>(std::istream &is, Banknote &banknote);
     friend std::ostream &operator<<(std::ostream &os, const Banknote &banknote);

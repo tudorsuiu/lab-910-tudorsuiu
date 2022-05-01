@@ -8,10 +8,12 @@
 
 class Test {
 public:
-    void domain();
+    void productDomain();
+    void banknoteDomain();
     void repository();
     void repositoryInFile();
-    void service();
+    void productService();
+    void banknoteService();
     void all();
 };
 
