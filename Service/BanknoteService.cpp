@@ -40,10 +40,6 @@ Banknote BanknoteService::getBanknoteByValue(unsigned int value) {
     }
 }
 
-/*
- * first step: check if money exist
- * second step:
- */
 std::vector<Banknote> BanknoteService::change(unsigned int productPrice,
                                        unsigned int insertedAmount) {
     unsigned int changeValue = insertedAmount - productPrice;
@@ -60,7 +56,7 @@ std::vector<Banknote> BanknoteService::change(unsigned int productPrice,
     repository.getAll()[2].getNoOccurrences() == 0 &&
     repository.getAll()[3].getNoOccurrences() == 0 &&
     repository.getAll()[4].getNoOccurrences() == 0)) {
-
+        return changeVector;
     }
     else {
         for(int i = 0; i < repository.getAll().size(); i++) {
