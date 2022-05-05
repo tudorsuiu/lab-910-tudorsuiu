@@ -59,6 +59,19 @@ public:
      * @return: Product object - product with given code
      */
     Product getProductByCode(unsigned int code);
+
+    /**
+     * Get number of products by given name
+     * @param productName: string - given name
+     * @return: unsigned int - number of products
+     */
+    unsigned int numberOfProductsByName(std::string productName);
+
+    /**
+     * Returns a vector with all products that appear only once
+     * @return: vector<Product> - all products but with only one appearence
+     */
+    std::vector<Product> showUniqueProducts();
 };
 
 

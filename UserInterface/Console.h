@@ -19,6 +19,8 @@ public:
     void showMenu();
     void showAdminMenu();
     void showBuyerMenu();
+    void insertMoney(unsigned int &inserted, unsigned int credit, Product &product);
+    void pickUpChange(unsigned int &inserted, Product &product, std::vector<Banknote> copy);
     void runMenu();
 };
 

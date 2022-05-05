@@ -34,3 +34,29 @@ Product ProductService::getProductByCode(unsigned int code) {
     }
     return Product(0, 0, "", 0);
 }
+
+unsigned int ProductService::numberOfProductsByName(std::string productName) {
+    unsigned int numberOfProducts = 0;
+    for(int i = 0; i < repository.getAll().size(); i++) {
+        if(repository.getAll()[i].getName() == productName) {
+            numberOfProducts++;
+        }
+    }
+    return numberOfProducts;
+}
+
+std::vector<Product> ProductService::showUniqueProducts() {
+    std::vector<Product> result;
+    for(int i = 0; i < repository.getAll().size(); i++) {
+        bool found = false;
+        for(int j = 0; j < result.size(); j++) {
+            if(repository.getAll()[i] == result[j]) {
+                found = true;
+            }
+        }
+        if(found == false) {
+            result.push_back(repository.getAll()[i]);
+        }
+    }
+    return result;
+}
