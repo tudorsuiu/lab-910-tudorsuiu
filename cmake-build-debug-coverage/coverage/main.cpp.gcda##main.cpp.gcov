@@ -1,0 +1,71 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/main.cpp
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include "Tests/Test.h"
+        -:    3:#include "UserInterface/Console.h"
+        -:    4:
+function main called 1 returned 100% blocks executed 56%
+        1:    5:int main() {
+        -:    6:    Test test;
+        1:    7:    test.all();
+        1:    7-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:    8:
+        2:    9:    RepositoryInFile<Product> productInFile("products.txt");
+        1:    9-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    9-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:    9-block  2
+    $$$$$:    9-block  3
+        2:   10:    RepositoryInFile<Banknote> banknoteInFile("banknotes.txt");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   10-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:   10-block  1
+    $$$$$:   10-block  2
+        1:   11:    ProductService productService(productInFile);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   12:    BanknoteService banknoteService(banknoteInFile);
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13:    Console console(productService, banknoteService);
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   14:
+        1:   15:    console.runMenu();
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16:    return 0;
+        1:   17:}
+        1:   17-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   17-block  1
+call    2 never executed
+    $$$$$:   17-block  2
+call    3 never executed

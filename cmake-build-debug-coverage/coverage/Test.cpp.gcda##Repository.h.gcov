@@ -1,0 +1,285 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Repository/Repository.h
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Tests\Test.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Tests\Test.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 4/18/2022.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB_910_TUDORSUIU_REPOSITORY_H
+        -:    6:#define LAB_910_TUDORSUIU_REPOSITORY_H
+        -:    7:
+        -:    8:#include <vector>
+        -:    9:#include "IRepository.h"
+        -:   10:
+        -:   11:template<class T> class Repository : public IRepository<T> {
+        -:   12:private:
+        -:   13:    std::vector<T> entities;
+        -:   14:public:
+        -:   15:    /**
+        -:   16:     * Constructor
+        -:   17:     */
+        3:   18:    Repository() = default;
+------------------
+_ZN10RepositoryI8BanknoteEC1Ev:
+function _ZN10RepositoryI8BanknoteEC1Ev called 1 returned 100% blocks executed 100%
+        1:   18:    Repository() = default;
+        1:   18-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN10RepositoryI7ProductEC1Ev:
+function _ZN10RepositoryI7ProductEC1Ev called 2 returned 100% blocks executed 100%
+        2:   18:    Repository() = default;
+        2:   18-block  0
+call    0 returned 2
+call    1 returned 2
+------------------
+        -:   19:
+        -:   20:    /**
+        -:   21:     * Copy-constructor
+        -:   22:     * @param repository: Repository object
+        -:   23:     */
+        -:   24:    Repository(const Repository<T> &repository) {
+        -:   25:        this->entities = repository.entities;
+        -:   26:    }
+        -:   27:
+        -:   28:    /**
+        -:   29:     * Destructor
+        -:   30:     */
+        3:   31:    ~Repository() = default;
+------------------
+_ZN10RepositoryI8BanknoteED1Ev:
+function _ZN10RepositoryI8BanknoteED1Ev called 1 returned 100% blocks executed 100%
+        1:   31:    ~Repository() = default;
+        1:   31-block  0
+call    0 returned 1
+------------------
+_ZN10RepositoryI7ProductED1Ev:
+function _ZN10RepositoryI7ProductED1Ev called 2 returned 100% blocks executed 100%
+        2:   31:    ~Repository() = default;
+        2:   31-block  0
+call    0 returned 2
+------------------
+        -:   32:
+        -:   33:    /**
+        -:   34:     * Add entity to repository
+        -:   35:     * @param entity: T class object
+        -:   36:     */
+       20:   37:    void addEntity(T entity) override {
+        -:   38:
+       20:   39:        this->entities.push_back(entity);
+       20:   40:    }
+------------------
+_ZN10RepositoryI8BanknoteE9addEntityES0_:
+function _ZN10RepositoryI8BanknoteE9addEntityES0_ called 10 returned 100% blocks executed 100%
+       10:   37:    void addEntity(T entity) override {
+        -:   38:
+       10:   39:        this->entities.push_back(entity);
+       10:   39-block  0
+call    0 returned 10
+       10:   40:    }
+------------------
+_ZN10RepositoryI7ProductE9addEntityES0_:
+function _ZN10RepositoryI7ProductE9addEntityES0_ called 10 returned 100% blocks executed 100%
+       10:   37:    void addEntity(T entity) override {
+        -:   38:
+       10:   39:        this->entities.push_back(entity);
+       10:   39-block  0
+call    0 returned 10
+       10:   40:    }
+------------------
+        -:   41:
+        -:   42:    /**
+        -:   43:     * Update an entity from repository
+        -:   44:     * @param index: int - entity location in repository
+        -:   45:     * @param newEntity: T class object - updated entity
+        -:   46:     */
+       12:   47:    void updateEntity(unsigned int index, T newEntity) override {
+       54:   48:        for(int i = 0; i < entities.size(); i++) {
+       42:   49:            if(entities[i].getIndex() == index) {
+       12:   50:                entities[i] = newEntity;
+        -:   51:            }
+        -:   52:        }
+       12:   53:    }
+------------------
+_ZN10RepositoryI8BanknoteE12updateEntityEjS0_:
+function _ZN10RepositoryI8BanknoteE12updateEntityEjS0_ called 8 returned 100% blocks executed 100%
+        8:   47:    void updateEntity(unsigned int index, T newEntity) override {
+       42:   48:        for(int i = 0; i < entities.size(); i++) {
+        8:   48-block  0
+       34:   48-block  1
+       42:   48-block  2
+call    0 returned 42
+branch  1 taken 34
+branch  2 taken 8 (fallthrough)
+       34:   49:            if(entities[i].getIndex() == index) {
+       34:   49-block  0
+call    0 returned 34
+call    1 returned 34
+branch  2 taken 8 (fallthrough)
+branch  3 taken 26
+        8:   50:                entities[i] = newEntity;
+        8:   50-block  0
+call    0 returned 8
+call    1 returned 8
+        -:   51:            }
+        -:   52:        }
+        8:   53:    }
+------------------
+_ZN10RepositoryI7ProductE12updateEntityEjS0_:
+function _ZN10RepositoryI7ProductE12updateEntityEjS0_ called 4 returned 100% blocks executed 100%
+        4:   47:    void updateEntity(unsigned int index, T newEntity) override {
+       12:   48:        for(int i = 0; i < entities.size(); i++) {
+        4:   48-block  0
+        8:   48-block  1
+       12:   48-block  2
+call    0 returned 12
+branch  1 taken 8
+branch  2 taken 4 (fallthrough)
+        8:   49:            if(entities[i].getIndex() == index) {
+        8:   49-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 4 (fallthrough)
+branch  3 taken 4
+        4:   50:                entities[i] = newEntity;
+        4:   50-block  0
+call    0 returned 4
+call    1 returned 4
+        -:   51:            }
+        -:   52:        }
+        4:   53:    }
+------------------
+        -:   54:
+        -:   55:    /**
+        -:   56:     * Delete an entity from repository
+        -:   57:     * @param index: int - entity location in repository
+        -:   58:     */
+       11:   59:    void deleteEntity(unsigned int index) override {
+        -:   60:        int position;
+       50:   61:        for(int i = 0; i < entities.size(); i++) {
+       39:   62:            if(entities[i].getIndex() == index) {
+       11:   63:                position = i;
+        -:   64:            }
+        -:   65:        }
+       11:   66:        entities.erase(entities.begin() + position);
+       11:   67:    }
+------------------
+_ZN10RepositoryI8BanknoteE12deleteEntityEj:
+function _ZN10RepositoryI8BanknoteE12deleteEntityEj called 5 returned 100% blocks executed 88%
+        5:   59:    void deleteEntity(unsigned int index) override {
+        -:   60:        int position;
+       20:   61:        for(int i = 0; i < entities.size(); i++) {
+        5:   61-block  0
+       15:   61-block  1
+       20:   61-block  2
+call    0 returned 20
+branch  1 taken 15
+branch  2 taken 5 (fallthrough)
+       15:   62:            if(entities[i].getIndex() == index) {
+       15:   62-block  0
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 5 (fallthrough)
+branch  3 taken 10
+        5:   63:                position = i;
+        5:   63-block  0
+        -:   64:            }
+        -:   65:        }
+        5:   66:        entities.erase(entities.begin() + position);
+        5:   66-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   66-block  1
+    $$$$$:   66-block  2
+        5:   67:    }
+        5:   67-block  0
+------------------
+_ZN10RepositoryI7ProductE12deleteEntityEj:
+function _ZN10RepositoryI7ProductE12deleteEntityEj called 6 returned 100% blocks executed 88%
+        6:   59:    void deleteEntity(unsigned int index) override {
+        -:   60:        int position;
+       30:   61:        for(int i = 0; i < entities.size(); i++) {
+        6:   61-block  0
+       24:   61-block  1
+       30:   61-block  2
+call    0 returned 30
+branch  1 taken 24
+branch  2 taken 6 (fallthrough)
+       24:   62:            if(entities[i].getIndex() == index) {
+       24:   62-block  0
+call    0 returned 24
+call    1 returned 24
+branch  2 taken 6 (fallthrough)
+branch  3 taken 18
+        6:   63:                position = i;
+        6:   63-block  0
+        -:   64:            }
+        -:   65:        }
+        6:   66:        entities.erase(entities.begin() + position);
+        6:   66-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   66-block  1
+    $$$$$:   66-block  2
+        6:   67:    }
+        6:   67-block  0
+------------------
+        -:   68:
+        -:   69:    /**
+        -:   70:     * Get all entities and returns them
+        -:   71:     * @return: Vector<class T> - all entities stored in repository
+        -:   72:     */
+      201:   73:    std::vector<T> getAll() override {
+      201:   74:        return this->entities;
+        -:   75:    }
+------------------
+_ZN10RepositoryI8BanknoteE6getAllEv:
+function _ZN10RepositoryI8BanknoteE6getAllEv called 144 returned 100% blocks executed 100%
+      144:   73:    std::vector<T> getAll() override {
+      144:   74:        return this->entities;
+      144:   74-block  0
+call    0 returned 144
+        -:   75:    }
+------------------
+_ZN10RepositoryI7ProductE6getAllEv:
+function _ZN10RepositoryI7ProductE6getAllEv called 57 returned 100% blocks executed 100%
+       57:   73:    std::vector<T> getAll() override {
+       57:   74:        return this->entities;
+       57:   74-block  0
+call    0 returned 57
+        -:   75:    }
+------------------
+        -:   76:
+        -:   77:    /**
+        -:   78:     * Get position by object index
+        -:   79:     * @param index: unsigned int - object index
+        -:   80:     * @return: int - object position
+        -:   81:     */
+    #####:   82:    int getPosByIndex(unsigned int index) {
+    #####:   83:        for(int i = 0; i < entities.size(); i++) {
+    #####:   84:            if(entities[i].getIndex() == index) {
+    #####:   85:                return i;
+        -:   86:            }
+        -:   87:        }
+    #####:   88:        return -1;
+        -:   89:    }
+        -:   90:
+        -:   91:    friend std::ostream &operator<<(std::ostream &os, const Repository<T> &repository) {
+        -:   92:        for(int i = 0; i < repository.entities.size(); i++) {
+        -:   93:            os << repository.entities[i] << '\n';
+        -:   94:        }
+        -:   95:        return os;
+        -:   96:    }
+        -:   97:};
+        -:   98:
+        -:   99:#endif //LAB_910_TUDORSUIU_REPOSITORY_H

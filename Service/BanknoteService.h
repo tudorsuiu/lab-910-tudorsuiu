@@ -7,11 +7,13 @@
 
 
 #include <vector>
-#include "../Domain/Banknote.h"
+#include "../Domain/Banknote/Banknote.h"
 #include "../Repository/IRepository.h"
+#include "../Domain/Banknote/BanknoteValidator.h"
 
 class BanknoteService {
 private:
+    BanknoteValidator validator;
     IRepository<Banknote> &repository;
 public:
     /**
@@ -72,6 +74,13 @@ public:
      * @return: vector<Banknote> - banknotes that our customer is picking up as change
      */
     std::vector<Banknote> change(unsigned int productPrice, unsigned int insertedAmount);
+
+    /**
+     * Verify if there exist a banknote with the same id
+     * @param index: unsigned int - id to be verified
+     * @return: true if there exist a banknote with the same id, false otherwise
+     */
+    bool doesExist(unsigned int index);
 };
 
 

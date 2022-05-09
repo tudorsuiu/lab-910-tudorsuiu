@@ -98,7 +98,6 @@ public:
         for(T object : this->elements) {
             f << object.toStringDelimiter(' ') << '\n';
         }
-        f.close();
     }
 
 

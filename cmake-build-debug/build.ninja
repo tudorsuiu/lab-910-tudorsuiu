@@ -55,11 +55,11 @@ build CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj: CXX_COMPILER__lab_910_tudor
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
   OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir
 
-build CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Product.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
-  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product.cpp.obj.d
+build CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product/Product.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Product/Product.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product\Product.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
-  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Domain
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product
 
 build CMakeFiles/lab_910_tudorsuiu.dir/Service/ProductService.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Service/ProductService.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
   DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Service\ProductService.cpp.obj.d
@@ -79,17 +79,65 @@ build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj: CXX_COMPILER__lab_910
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
   OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests
 
-build CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Banknote.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
-  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Banknote.cpp.obj.d
+build CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote/Banknote.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Banknote/Banknote.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Banknote\Banknote.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
-  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Domain
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Banknote
 
 build CMakeFiles/lab_910_tudorsuiu.dir/Service/BanknoteService.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Service/BanknoteService.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
   DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Service\BanknoteService.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
   OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Service
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote/BanknoteValidator.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Banknote/BanknoteValidator.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Banknote\BanknoteValidator.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Banknote
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product/ProductValidator.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Product/ProductValidator.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product\ProductValidator.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Domain/TestBanknoteDomain/TestBanknoteDomain.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Tests/Domain/TestBanknoteDomain/TestBanknoteDomain.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Domain\TestBanknoteDomain\TestBanknoteDomain.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Domain\TestBanknoteDomain
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Domain/TestProductDomain/TestProductDomain.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Tests/Domain/TestProductDomain/TestProductDomain.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Domain\TestProductDomain\TestProductDomain.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Domain\TestProductDomain
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Repository/TestProductRepository/TestProductRepository.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Tests/Repository/TestProductRepository/TestProductRepository.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Repository\TestProductRepository\TestProductRepository.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Repository\TestProductRepository
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Service/TestBanknoteService/TestBanknoteService.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Tests/Service/TestBanknoteService/TestBanknoteService.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Service\TestBanknoteService\TestBanknoteService.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Service\TestBanknoteService
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Repository/TestProductRepositoryInFile/TestProductRepositoryInFile.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Tests/Repository/TestProductRepositoryInFile/TestProductRepositoryInFile.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Repository\TestProductRepositoryInFile\TestProductRepositoryInFile.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Repository\TestProductRepositoryInFile
+
+build CMakeFiles/lab_910_tudorsuiu.dir/Tests/Service/TestProductService/TestProductService.cpp.obj: CXX_COMPILER__lab_910_tudorsuiu_Debug C$:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Tests/Service/TestProductService/TestProductService.cpp || cmake_object_order_depends_target_lab_910_tudorsuiu
+  DEP_FILE = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Service\TestProductService\TestProductService.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab_910_tudorsuiu.dir\Tests\Service\TestProductService
 
 
 # =============================================================================
@@ -99,7 +147,7 @@ build CMakeFiles/lab_910_tudorsuiu.dir/Service/BanknoteService.cpp.obj: CXX_COMP
 #############################################
 # Link the executable lab_910_tudorsuiu.exe
 
-build lab_910_tudorsuiu.exe: CXX_EXECUTABLE_LINKER__lab_910_tudorsuiu_Debug CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Service/ProductService.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Service/BanknoteService.cpp.obj
+build lab_910_tudorsuiu.exe: CXX_EXECUTABLE_LINKER__lab_910_tudorsuiu_Debug CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product/Product.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Service/ProductService.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote/Banknote.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Service/BanknoteService.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote/BanknoteValidator.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product/ProductValidator.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Domain/TestBanknoteDomain/TestBanknoteDomain.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Domain/TestProductDomain/TestProductDomain.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Repository/TestProductRepository/TestProductRepository.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Service/TestBanknoteService/TestBanknoteService.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Repository/TestProductRepositoryInFile/TestProductRepositoryInFile.cpp.obj CMakeFiles/lab_910_tudorsuiu.dir/Tests/Service/TestProductService/TestProductService.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\lab_910_tudorsuiu.dir

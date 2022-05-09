@@ -6,13 +6,15 @@
 #define LAB_910_TUDORSUIU_PRODUCTSERVICE_H
 
 
-#include "../Domain/Product.h"
+#include "../Domain/Product/Product.h"
 #include "../Repository/Repository.h"
 #include "../Repository/IRepository.h"
 #include "../Repository/RepositoryInFile.h"
+#include "../Domain/Product/ProductValidator.h"
 
 class ProductService {
 private:
+    ProductValidator validator;
     IRepository<Product> &repository;
 public:
     /**
@@ -72,6 +74,13 @@ public:
      * @return: vector<Product> - all products but with only one appearence
      */
     std::vector<Product> showUniqueProducts();
+
+    /**
+     *
+     * @param index
+     * @return
+     */
+    bool doesExist(unsigned int index);
 };
 
 

@@ -1,0 +1,608 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Repository/RepositoryInFile.h
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 4/24/2022.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB_910_TUDORSUIU_REPOSITORYINFILE_H
+        -:    6:#define LAB_910_TUDORSUIU_REPOSITORYINFILE_H
+        -:    7:
+        -:    8:
+        -:    9:#include <fstream>
+        -:   10:#include <vector>
+        -:   11:#include "IRepository.h"
+        -:   12:
+        -:   13:template<class T> class RepositoryInFile : public IRepository<T> {
+        -:   14:private:
+        -:   15:    std::vector<T> elements;
+        -:   16:    std::string fileName;
+        -:   17:public:
+        -:   18:    /**
+        -:   19:     * Read from file
+        -:   20:     * @param name: string - file name
+        -:   21:     */
+        3:   22:    RepositoryInFile(std::string name) {
+        3:   23:        this->fileName = name;
+        3:   24:        this->loadFromFile();
+        3:   25:    }
+------------------
+_ZN16RepositoryInFileI8BanknoteEC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE:
+function _ZN16RepositoryInFileI8BanknoteEC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 70%
+        1:   22:    RepositoryInFile(std::string name) {
+        1:   22-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:   23:        this->fileName = name;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   24:        this->loadFromFile();
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   25:    }
+        1:   25-block  0
+    $$$$$:   25-block  1
+call    0 never executed
+    $$$$$:   25-block  2
+call    1 never executed
+------------------
+_ZN16RepositoryInFileI7ProductEC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE:
+function _ZN16RepositoryInFileI7ProductEC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 70%
+        2:   22:    RepositoryInFile(std::string name) {
+        2:   22-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        2:   23:        this->fileName = name;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   24:        this->loadFromFile();
+        2:   24-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   25:    }
+        2:   25-block  0
+    $$$$$:   25-block  1
+call    0 never executed
+    $$$$$:   25-block  2
+call    1 never executed
+------------------
+        -:   26:
+        -:   27:    /**
+        -:   28:     * Destructor
+        -:   29:     */
+        3:   30:    ~RepositoryInFile() = default;
+------------------
+_ZN16RepositoryInFileI8BanknoteED1Ev:
+function _ZN16RepositoryInFileI8BanknoteED1Ev called 1 returned 100% blocks executed 100%
+        1:   30:    ~RepositoryInFile() = default;
+        1:   30-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN16RepositoryInFileI7ProductED1Ev:
+function _ZN16RepositoryInFileI7ProductED1Ev called 2 returned 100% blocks executed 100%
+        2:   30:    ~RepositoryInFile() = default;
+        2:   30-block  0
+call    0 returned 2
+call    1 returned 2
+------------------
+        -:   31:
+        -:   32:    /**
+        -:   33:     * Add entity to file
+        -:   34:     * @param entity: T class object
+        -:   35:     */
+       5*:   36:    void addEntity(T entity) override {
+       5*:   37:        this->elements.push_back(entity);
+       5*:   38:        this->saveToFile();
+       5*:   39:    }
+------------------
+_ZN16RepositoryInFileI7ProductE9addEntityES0_:
+function _ZN16RepositoryInFileI7ProductE9addEntityES0_ called 5 returned 100% blocks executed 100%
+        5:   36:    void addEntity(T entity) override {
+        5:   37:        this->elements.push_back(entity);
+        5:   37-block  0
+call    0 returned 5
+        5:   38:        this->saveToFile();
+call    0 returned 5
+        5:   39:    }
+------------------
+_ZN16RepositoryInFileI8BanknoteE9addEntityES0_:
+function _ZN16RepositoryInFileI8BanknoteE9addEntityES0_ called 0 returned 0% blocks executed 0%
+    #####:   36:    void addEntity(T entity) override {
+    #####:   37:        this->elements.push_back(entity);
+    %%%%%:   37-block  0
+call    0 never executed
+    #####:   38:        this->saveToFile();
+call    0 never executed
+    #####:   39:    }
+------------------
+        -:   40:
+        -:   41:    /**
+        -:   42:     * Get all entities from file
+        -:   43:     * @return: Vector<class T> - all entities stored in file
+        -:   44:     */
+       8*:   45:    std::vector<T> getAll() override {
+       8*:   46:        return this->elements;
+        -:   47:    }
+------------------
+_ZN16RepositoryInFileI7ProductE6getAllEv:
+function _ZN16RepositoryInFileI7ProductE6getAllEv called 8 returned 100% blocks executed 100%
+        8:   45:    std::vector<T> getAll() override {
+        8:   46:        return this->elements;
+        8:   46-block  0
+call    0 returned 8
+        -:   47:    }
+------------------
+_ZN16RepositoryInFileI8BanknoteE6getAllEv:
+function _ZN16RepositoryInFileI8BanknoteE6getAllEv called 0 returned 0% blocks executed 0%
+    #####:   45:    std::vector<T> getAll() override {
+    #####:   46:        return this->elements;
+    %%%%%:   46-block  0
+call    0 never executed
+        -:   47:    }
+------------------
+        -:   48:
+        -:   49:    /**
+        -:   50:     * Update an entity from file
+        -:   51:     * @param index: unsigned int - entity index
+        -:   52:     * @param newEntity: T class object - updated entity
+        -:   53:     */
+       2*:   54:    void updateEntity(unsigned int index, T newEntity) override {
+       6*:   55:        for(int i = 0; i < elements.size(); i++) {
+       4*:   56:            if(elements[i].getIndex() == index) {
+       2*:   57:                elements[i] = newEntity;
+        -:   58:            }
+        -:   59:        }
+       2*:   60:        this->saveToFile();
+       2*:   61:    }
+------------------
+_ZN16RepositoryInFileI7ProductE12updateEntityEjS0_:
+function _ZN16RepositoryInFileI7ProductE12updateEntityEjS0_ called 2 returned 100% blocks executed 100%
+        2:   54:    void updateEntity(unsigned int index, T newEntity) override {
+        6:   55:        for(int i = 0; i < elements.size(); i++) {
+        2:   55-block  0
+        4:   55-block  1
+        6:   55-block  2
+call    0 returned 6
+branch  1 taken 4
+branch  2 taken 2 (fallthrough)
+        4:   56:            if(elements[i].getIndex() == index) {
+        4:   56-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 2 (fallthrough)
+branch  3 taken 2
+        2:   57:                elements[i] = newEntity;
+        2:   57-block  0
+call    0 returned 2
+call    1 returned 2
+        -:   58:            }
+        -:   59:        }
+        2:   60:        this->saveToFile();
+        2:   60-block  0
+call    0 returned 2
+        2:   61:    }
+------------------
+_ZN16RepositoryInFileI8BanknoteE12updateEntityEjS0_:
+function _ZN16RepositoryInFileI8BanknoteE12updateEntityEjS0_ called 0 returned 0% blocks executed 0%
+    #####:   54:    void updateEntity(unsigned int index, T newEntity) override {
+    #####:   55:        for(int i = 0; i < elements.size(); i++) {
+    %%%%%:   55-block  0
+    %%%%%:   55-block  1
+    %%%%%:   55-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   56:            if(elements[i].getIndex() == index) {
+    %%%%%:   56-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   57:                elements[i] = newEntity;
+    %%%%%:   57-block  0
+call    0 never executed
+call    1 never executed
+        -:   58:            }
+        -:   59:        }
+    #####:   60:        this->saveToFile();
+    %%%%%:   60-block  0
+call    0 never executed
+    #####:   61:    }
+------------------
+        -:   62:
+        -:   63:    /**
+        -:   64:     * Delete an entity from file
+        -:   65:     * @param code: unsigned int - entity code
+        -:   66:     */
+       5*:   67:    void deleteEntity(unsigned int index) override {
+        -:   68:        int position;
+      20*:   69:        for(int i = 0; i < elements.size(); i++) {
+      15*:   70:            if(elements[i].getIndex() == index) {
+       5*:   71:                position = i;
+        -:   72:            }
+        -:   73:        }
+       5*:   74:        elements.erase(elements.begin() + position);
+       5*:   75:        this->saveToFile();
+       5*:   76:    }
+------------------
+_ZN16RepositoryInFileI7ProductE12deleteEntityEj:
+function _ZN16RepositoryInFileI7ProductE12deleteEntityEj called 5 returned 100% blocks executed 88%
+        5:   67:    void deleteEntity(unsigned int index) override {
+        -:   68:        int position;
+       20:   69:        for(int i = 0; i < elements.size(); i++) {
+        5:   69-block  0
+       15:   69-block  1
+       20:   69-block  2
+call    0 returned 20
+branch  1 taken 15
+branch  2 taken 5 (fallthrough)
+       15:   70:            if(elements[i].getIndex() == index) {
+       15:   70-block  0
+call    0 returned 15
+call    1 returned 15
+branch  2 taken 5 (fallthrough)
+branch  3 taken 10
+        5:   71:                position = i;
+        5:   71-block  0
+        -:   72:            }
+        -:   73:        }
+        5:   74:        elements.erase(elements.begin() + position);
+        5:   74-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   74-block  1
+    $$$$$:   74-block  2
+        5:   75:        this->saveToFile();
+        5:   75-block  0
+call    0 returned 5
+        5:   76:    }
+------------------
+_ZN16RepositoryInFileI8BanknoteE12deleteEntityEj:
+function _ZN16RepositoryInFileI8BanknoteE12deleteEntityEj called 0 returned 0% blocks executed 0%
+    #####:   67:    void deleteEntity(unsigned int index) override {
+        -:   68:        int position;
+    #####:   69:        for(int i = 0; i < elements.size(); i++) {
+    %%%%%:   69-block  0
+    %%%%%:   69-block  1
+    %%%%%:   69-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   70:            if(elements[i].getIndex() == index) {
+    %%%%%:   70-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   71:                position = i;
+    %%%%%:   71-block  0
+        -:   72:            }
+        -:   73:        }
+    #####:   74:        elements.erase(elements.begin() + position);
+    %%%%%:   74-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   74-block  1
+    $$$$$:   74-block  2
+    #####:   75:        this->saveToFile();
+    %%%%%:   75-block  0
+call    0 never executed
+    #####:   76:    }
+------------------
+        -:   77:
+        -:   78:    /**
+        -:   79:     * Get position by object index
+        -:   80:     * @param index: unsigned int - object index
+        -:   81:     * @return: int - object position
+        -:   82:     */
+    #####:   83:    int getPosByIndex(unsigned int index) override {
+    #####:   84:        for(int i = 0; i < elements.size(); i++) {
+    #####:   85:            if(elements[i].getIndex() == index) {
+    #####:   86:                return i;
+        -:   87:            }
+        -:   88:        }
+    #####:   89:        return -1;
+        -:   90:    }
+------------------
+_ZN16RepositoryInFileI7ProductE13getPosByIndexEj:
+function _ZN16RepositoryInFileI7ProductE13getPosByIndexEj called 0 returned 0% blocks executed 0%
+    #####:   83:    int getPosByIndex(unsigned int index) override {
+    #####:   84:        for(int i = 0; i < elements.size(); i++) {
+    %%%%%:   84-block  0
+    %%%%%:   84-block  1
+    %%%%%:   84-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   85:            if(elements[i].getIndex() == index) {
+    %%%%%:   85-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   86:                return i;
+    %%%%%:   86-block  0
+        -:   87:            }
+        -:   88:        }
+    #####:   89:        return -1;
+    %%%%%:   89-block  0
+        -:   90:    }
+------------------
+_ZN16RepositoryInFileI8BanknoteE13getPosByIndexEj:
+function _ZN16RepositoryInFileI8BanknoteE13getPosByIndexEj called 0 returned 0% blocks executed 0%
+    #####:   83:    int getPosByIndex(unsigned int index) override {
+    #####:   84:        for(int i = 0; i < elements.size(); i++) {
+    %%%%%:   84-block  0
+    %%%%%:   84-block  1
+    %%%%%:   84-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   85:            if(elements[i].getIndex() == index) {
+    %%%%%:   85-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   86:                return i;
+    %%%%%:   86-block  0
+        -:   87:            }
+        -:   88:        }
+    #####:   89:        return -1;
+    %%%%%:   89-block  0
+        -:   90:    }
+------------------
+        -:   91:
+        -:   92:    /**
+        -:   93:     * Saves the elements from vector "elements" in file
+        -:   94:     */
+      12*:   95:    void saveToFile()
+        -:   96:    {
+      12*:   97:        std::ofstream f(this->fileName);
+      41*:   98:        for(T object : this->elements) {
+      29*:   99:            f << object.toStringDelimiter(' ') << '\n';
+        -:  100:        }
+      12*:  101:    }
+------------------
+_ZN16RepositoryInFileI7ProductE10saveToFileEv:
+function _ZN16RepositoryInFileI7ProductE10saveToFileEv called 12 returned 100% blocks executed 67%
+       12:   95:    void saveToFile()
+        -:   96:    {
+       12:   97:        std::ofstream f(this->fileName);
+       12:   97-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       41:   98:        for(T object : this->elements) {
+       12:   98-block  0
+call    0 returned 12
+call    1 returned 12
+       29:   98-block  1
+call    2 returned 29
+call    3 returned 29
+branch  4 taken 29 (fallthrough)
+branch  5 taken 0 (throw)
+call    6 returned 29
+       41:   98-block  2
+call    7 returned 41
+branch  8 taken 29
+branch  9 taken 12 (fallthrough)
+    $$$$$:   98-block  3
+call   10 never executed
+       29:   99:            f << object.toStringDelimiter(' ') << '\n';
+       29:   99-block  0
+call    0 returned 29
+branch  1 taken 29 (fallthrough)
+branch  2 taken 0 (throw)
+       29:   99-block  1
+call    3 returned 29
+branch  4 taken 29 (fallthrough)
+branch  5 taken 0 (throw)
+       29:   99-block  2
+call    6 returned 29
+branch  7 taken 29 (fallthrough)
+branch  8 taken 0 (throw)
+       29:   99-block  3
+call    9 returned 29
+call   10 returned 29
+    $$$$$:   99-block  4
+call   11 never executed
+    $$$$$:   99-block  5
+        -:  100:        }
+       12:  101:    }
+       12:  101-block  0
+call    0 returned 12
+    $$$$$:  101-block  1
+call    1 never executed
+------------------
+_ZN16RepositoryInFileI8BanknoteE10saveToFileEv:
+function _ZN16RepositoryInFileI8BanknoteE10saveToFileEv called 0 returned 0% blocks executed 0%
+    #####:   95:    void saveToFile()
+        -:   96:    {
+    #####:   97:        std::ofstream f(this->fileName);
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   98:        for(T object : this->elements) {
+    %%%%%:   98-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   98-block  1
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+call    6 never executed
+    %%%%%:   98-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   98-block  3
+call   10 never executed
+    #####:   99:            f << object.toStringDelimiter(' ') << '\n';
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   99-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   99-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   99-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:   99-block  4
+call   11 never executed
+    $$$$$:   99-block  5
+        -:  100:        }
+    #####:  101:    }
+    %%%%%:  101-block  0
+call    0 never executed
+    $$$$$:  101-block  1
+call    1 never executed
+------------------
+        -:  102:
+        -:  103:
+        -:  104:    /**
+        -:  105:     * Loads the elements from file into "elements" vector
+        -:  106:     */
+        3:  107:    void loadFromFile()
+        -:  108:    {
+        3:  109:        std::string line;
+        3:  110:        std::ifstream f(this->fileName);
+       3*:  111:        while (std::getline(f, line)) {
+    #####:  112:            T object(line, ' ');
+    #####:  113:            this->elements.push_back(object);
+        -:  114:        }
+        3:  115:    }
+------------------
+_ZN16RepositoryInFileI8BanknoteE12loadFromFileEv:
+function _ZN16RepositoryInFileI8BanknoteE12loadFromFileEv called 1 returned 100% blocks executed 38%
+        1:  107:    void loadFromFile()
+        -:  108:    {
+        1:  109:        std::string line;
+        1:  109-block  0
+call    0 returned 1
+        1:  110:        std::ifstream f(this->fileName);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  111:        while (std::getline(f, line)) {
+        1:  111-block  0
+    %%%%%:  111-block  1
+call    0 never executed
+        1:  111-block  2
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  111-block  3
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  111-block  4
+branch  7 taken 0
+branch  8 taken 1 (fallthrough)
+    $$$$$:  111-block  5
+call    9 never executed
+    #####:  112:            T object(line, ' ');
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  112-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  112-block  2
+    #####:  113:            this->elements.push_back(object);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  114:        }
+        1:  115:    }
+        1:  115-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  115-block  1
+call    2 never executed
+    $$$$$:  115-block  2
+call    3 never executed
+------------------
+_ZN16RepositoryInFileI7ProductE12loadFromFileEv:
+function _ZN16RepositoryInFileI7ProductE12loadFromFileEv called 2 returned 100% blocks executed 38%
+        2:  107:    void loadFromFile()
+        -:  108:    {
+        2:  109:        std::string line;
+        2:  109-block  0
+call    0 returned 2
+        2:  110:        std::ifstream f(this->fileName);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+       2*:  111:        while (std::getline(f, line)) {
+        2:  111-block  0
+    %%%%%:  111-block  1
+call    0 never executed
+        2:  111-block  2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  111-block  3
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:  111-block  4
+branch  7 taken 0
+branch  8 taken 2 (fallthrough)
+    $$$$$:  111-block  5
+call    9 never executed
+    #####:  112:            T object(line, ' ');
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  112-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  112-block  2
+    #####:  113:            this->elements.push_back(object);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  114:        }
+        2:  115:    }
+        2:  115-block  0
+call    0 returned 2
+call    1 returned 2
+    $$$$$:  115-block  1
+call    2 never executed
+    $$$$$:  115-block  2
+call    3 never executed
+------------------
+        -:  116:};
+        -:  117:
+        -:  118:
+        -:  119:#endif //LAB_910_TUDORSUIU_REPOSITORYINFILE_H

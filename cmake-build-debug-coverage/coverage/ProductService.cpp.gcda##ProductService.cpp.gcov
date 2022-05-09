@@ -1,0 +1,342 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Service/ProductService.cpp
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Service\ProductService.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Service\ProductService.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 4/18/2022.
+        -:    3://
+        -:    4:
+        -:    5:#include "ProductService.h"
+        -:    6:#include "../Domain/MyException.h"
+        -:    7:
+function _ZN14ProductServiceC2ER11IRepositoryI7ProductE called 2 returned 100% blocks executed 100%
+        2:    8:ProductService::ProductService(IRepository<Product> &iRepository) : repository(iRepository) {}
+        -:    9:
+function _ZN14ProductService6createE7Product called 5 returned 100% blocks executed 58%
+        5:   10:void ProductService::create(Product entity) {
+        5:   11:    if(doesExist(entity.getIndex())) {
+        5:   11-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 0 (fallthrough)
+branch  3 taken 5
+    #####:   12:        throw MyException("There already exist a product with this id.");
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   13:    }
+        5:   14:    validator.validate(entity);
+        5:   14-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   14-block  1
+call    4 returned 5
+    $$$$$:   14-block  2
+call    5 never executed
+    $$$$$:   14-block  3
+call    6 never executed
+        5:   15:    repository.addEntity(entity);
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   15-block  0
+call    4 returned 5
+    $$$$$:   15-block  1
+call    5 never executed
+        5:   16:}
+        -:   17:
+function _ZN14ProductService4readEj called 0 returned 0% blocks executed 0%
+    #####:   18:Product ProductService::read(unsigned int index) {
+    #####:   19:    if(!doesExist(index)) {
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   20:        throw MyException("Product with given id doesn't exist.");
+    %%%%%:   20-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   21:    }
+    #####:   22:    return repository.getAll()[repository.getPosByIndex(index)];
+    %%%%%:   22-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   22-block  1
+call    6 never executed
+    %%%%%:   22-block  2
+    $$$$$:   22-block  3
+call    7 never executed
+        -:   23:}
+        -:   24:
+function _ZN14ProductService4readEv called 8 returned 100% blocks executed 100%
+        8:   25:std::vector<Product> ProductService::read() {
+        8:   26:    return repository.getAll();
+        8:   26-block  0
+call    0 returned 8
+        -:   27:}
+        -:   28:
+function _ZN14ProductService6updateEj7Product called 2 returned 100% blocks executed 56%
+        2:   29:void ProductService::update(unsigned int index, Product newEntity) {
+        2:   30:    if(!doesExist(index)) {
+        2:   30-block  0
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    #####:   31:        throw MyException("The product that was going to be updated wasn't found.");
+    %%%%%:   31-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   32:    }
+        2:   33:    validator.validate(newEntity);
+        2:   33-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   33-block  1
+call    4 returned 2
+    $$$$$:   33-block  2
+call    5 never executed
+    $$$$$:   33-block  3
+call    6 never executed
+        2:   34:    repository.updateEntity(index, newEntity);
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   34-block  0
+call    4 returned 2
+    $$$$$:   34-block  1
+call    5 never executed
+        2:   35:}
+        -:   36:
+function _ZN14ProductService3delEj called 3 returned 100% blocks executed 57%
+        3:   37:void ProductService::del(unsigned int index) {
+        3:   38:    if(!doesExist(index)) {
+        3:   38-block  0
+call    0 returned 3
+branch  1 taken 0 (fallthrough)
+branch  2 taken 3
+    #####:   39:        throw MyException("Product with given id doesn't exist.");
+    %%%%%:   39-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   40:    }
+        3:   41:    repository.deleteEntity(index);
+        3:   41-block  0
+call    0 returned 3
+        3:   42:}
+        -:   43:
+function _ZN14ProductService16getProductByCodeEj called 0 returned 0% blocks executed 0%
+    #####:   44:Product ProductService::getProductByCode(unsigned int code) {
+    #####:   45:    for(int i = 0; i < repository.getAll().size(); i++) {
+    %%%%%:   45-block  0
+    %%%%%:   45-block  1
+    %%%%%:   45-block  2
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   46:        if(repository.getAll()[i].getCode() == code) {
+    %%%%%:   46-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   46-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   46-block  2
+call    8 never executed
+    $$$$$:   46-block  3
+call    9 never executed
+    #####:   47:            return repository.getAll()[i];
+    %%%%%:   47-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   47-block  1
+call    5 never executed
+    $$$$$:   47-block  2
+call    6 never executed
+    $$$$$:   47-block  3
+call    7 never executed
+        -:   48:        }
+        -:   49:    }
+    #####:   50:    return Product(0, 0, "", 0);
+    %%%%%:   50-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   50-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   50-block  2
+call    7 never executed
+call    8 never executed
+    $$$$$:   50-block  3
+call    9 never executed
+    $$$$$:   50-block  4
+    $$$$$:   50-block  5
+call   10 never executed
+        -:   51:}
+        -:   52:
+function _ZN14ProductService22numberOfProductsByNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   53:unsigned int ProductService::numberOfProductsByName(std::string productName) {
+    #####:   54:    unsigned int numberOfProducts = 0;
+    #####:   55:    for(int i = 0; i < repository.getAll().size(); i++) {
+    %%%%%:   55-block  0
+    %%%%%:   55-block  1
+    %%%%%:   55-block  2
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   56:        if(repository.getAll()[i].getName() == productName) {
+    %%%%%:   56-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   56-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   56-block  2
+call   10 never executed
+    #####:   57:            numberOfProducts++;
+    %%%%%:   57-block  0
+        -:   58:        }
+        -:   59:    }
+    #####:   60:    return numberOfProducts;
+    %%%%%:   60-block  0
+    %%%%%:   60-block  1
+        -:   61:}
+        -:   62:
+function _ZN14ProductService18showUniqueProductsEv called 0 returned 0% blocks executed 0%
+    #####:   63:std::vector<Product> ProductService::showUniqueProducts() {
+    #####:   64:    std::vector<Product> result;
+    %%%%%:   64-block  0
+call    0 never executed
+    #####:   65:    for(int i = 0; i < repository.getAll().size(); i++) {
+    %%%%%:   65-block  0
+    %%%%%:   65-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   65-block  2
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   66:        bool found = false;
+    #####:   67:        for(int j = 0; j < result.size(); j++) {
+    %%%%%:   67-block  0
+    %%%%%:   67-block  1
+    %%%%%:   67-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   68:            if(repository.getAll()[i] == result[j]) {
+    %%%%%:   68-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   68-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   68-block  2
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   68-block  3
+call   11 never executed
+    $$$$$:   68-block  4
+    #####:   69:                found = true;
+    %%%%%:   69-block  0
+        -:   70:            }
+        -:   71:        }
+    #####:   72:        if(found == false) {
+    %%%%%:   72-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   73:            result.push_back(repository.getAll()[i]);
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   73-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   73-block  2
+call    7 never executed
+    $$$$$:   73-block  3
+call    8 never executed
+    $$$$$:   73-block  4
+        -:   74:        }
+        -:   75:    }
+    #####:   76:    return result;
+    %%%%%:   76-block  0
+    %%%%%:   76-block  1
+    =====:   77:}
+    $$$$$:   77-block  0
+call    0 never executed
+        -:   78:
+function _ZN14ProductService9doesExistEj called 10 returned 100% blocks executed 88%
+       10:   79:bool ProductService::doesExist(unsigned int index) {
+       23:   80:    for(int i = 0; i < repository.getAll().size(); i++) {
+       10:   80-block  0
+       13:   80-block  1
+       23:   80-block  2
+call    0 returned 23
+call    1 returned 23
+call    2 returned 23
+branch  3 taken 18
+branch  4 taken 5 (fallthrough)
+       18:   81:        if(index == repository.getAll()[i].getIndex()) {
+       18:   81-block  0
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+branch  3 taken 18 (fallthrough)
+branch  4 taken 0 (throw)
+       18:   81-block  1
+call    5 returned 18
+branch  6 taken 5 (fallthrough)
+branch  7 taken 13
+    $$$$$:   81-block  2
+call    8 never executed
+        5:   82:            return true;
+        5:   82-block  0
+        -:   83:        }
+        -:   84:    }
+        5:   85:    return false;
+        5:   85-block  0
+        -:   86:}

@@ -3,14 +3,22 @@
 //
 
 #include "BanknoteService.h"
+#include "../Domain/MyException.h"
 
 BanknoteService::BanknoteService(IRepository<Banknote> &iRepository) : repository(iRepository) {}
 
 void BanknoteService::create(Banknote entity) {
+    if(doesExist(entity.getIndex())) {
+        throw MyException("There already exist a banknote with this id.");
+    }
+    validator.validate(entity);
     repository.addEntity(entity);
 }
 
 Banknote BanknoteService::read(unsigned int index) {
+    if(!doesExist(index)) {
+        throw MyException("Banknote with given id doesn't exist.");
+    }
     return repository.getAll()[repository.getPosByIndex(index)];
 }
 
@@ -19,10 +27,17 @@ std::vector<Banknote> BanknoteService::read() {
 }
 
 void BanknoteService::update(unsigned int index, Banknote newEntity) {
+    if(!doesExist(index)) {
+        throw MyException("The banknote that was going to be updated wasn't found.");
+    }
+    validator.validate(newEntity);
     repository.updateEntity(index, newEntity);
 }
 
 void BanknoteService::del(unsigned int index) {
+    if(!doesExist(index)) {
+        throw MyException("Banknote with given id doesn't exist.");
+    }
     repository.deleteEntity(index);
 }
 
@@ -38,6 +53,15 @@ Banknote BanknoteService::getBanknoteByValue(unsigned int value) {
             return repository.getAll()[i];
         }
     }
+}
+
+bool BanknoteService::doesExist(unsigned int index) {
+    for(int i = 0; i < repository.getAll().size(); i++) {
+        if(index == repository.getAll()[i].getIndex()) {
+            return true;
+        }
+    }
+    return false;
 }
 
 std::vector<Banknote> BanknoteService::change(unsigned int productPrice,

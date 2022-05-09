@@ -1,0 +1,11 @@
+# ninja log v5
+26	444	6738001526402823	CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote/BanknoteValidator.cpp.obj	9e7685cef5528ce2
+20	690	6738001528875149	CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj	40ba9fdbd5917096
+29	497	6738001527028004	CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product/ProductValidator.cpp.obj	9cf30d2ce26572ac
+36	625	6738001528282319	CMakeFiles/lab_910_tudorsuiu.dir/Service/BanknoteService.cpp.obj	bda640050574b8d1
+14	608	6738001528126050	CMakeFiles/lab_910_tudorsuiu.dir/Service/ProductService.cpp.obj	8cd72d32e9b172d5
+11	625	6738001528282319	CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product/Product.cpp.obj	992c697e1bd385b
+23	639	6738001528442630	CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote/Banknote.cpp.obj	d85229f19278b548
+1	759	6738001529660650	CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj	199018ce06c10f4
+16	912	6738001531209549	CMakeFiles/lab_910_tudorsuiu.dir/Tests/Test.cpp.obj	3c1fda12003e0a1c
+912	1070	6738001532761078	lab_910_tudorsuiu.exe	342765b8c459dbff

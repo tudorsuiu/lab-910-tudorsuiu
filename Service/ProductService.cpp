@@ -3,14 +3,22 @@
 //
 
 #include "ProductService.h"
+#include "../Domain/MyException.h"
 
 ProductService::ProductService(IRepository<Product> &iRepository) : repository(iRepository) {}
 
 void ProductService::create(Product entity) {
+    if(doesExist(entity.getIndex())) {
+        throw MyException("There already exist a product with this id.");
+    }
+    validator.validate(entity);
     repository.addEntity(entity);
 }
 
 Product ProductService::read(unsigned int index) {
+    if(!doesExist(index)) {
+        throw MyException("Product with given id doesn't exist.");
+    }
     return repository.getAll()[repository.getPosByIndex(index)];
 }
 
@@ -19,10 +27,17 @@ std::vector<Product> ProductService::read() {
 }
 
 void ProductService::update(unsigned int index, Product newEntity) {
+    if(!doesExist(index)) {
+        throw MyException("The product that was going to be updated wasn't found.");
+    }
+    validator.validate(newEntity);
     repository.updateEntity(index, newEntity);
 }
 
 void ProductService::del(unsigned int index) {
+    if(!doesExist(index)) {
+        throw MyException("Product with given id doesn't exist.");
+    }
     repository.deleteEntity(index);
 }
 
@@ -59,4 +74,13 @@ std::vector<Product> ProductService::showUniqueProducts() {
         }
     }
     return result;
+}
+
+bool ProductService::doesExist(unsigned int index) {
+    for(int i = 0; i < repository.getAll().size(); i++) {
+        if(index == repository.getAll()[i].getIndex()) {
+            return true;
+        }
+    }
+    return false;
 }

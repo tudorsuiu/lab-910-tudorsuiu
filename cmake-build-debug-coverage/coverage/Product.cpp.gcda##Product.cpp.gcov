@@ -1,0 +1,467 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Product/Product.cpp
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product\Product.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product\Product.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 4/18/2022.
+        -:    3://
+        -:    4:
+        -:    5:#include <iostream>
+        -:    6:#include "Product.h"
+        -:    7:
+function _ZN7ProductC2Ev called 1 returned 100% blocks executed 100%
+        1:    8:Product::Product() {
+        1:    8-block  0
+call    0 returned 1
+        1:    9:    this->index = 0;
+        1:   10:    this->code = 0;
+        1:   11:    this->price = 0;
+        1:   12:}
+        -:   13:
+function _ZN7ProductC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEc called 0 returned 0% blocks executed 0%
+    #####:   14:Product::Product(std::string args, char sep){
+    %%%%%:   14-block  0
+call    0 never executed
+    #####:   15:    this->loadFromString(args, sep);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   15-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   15-block  1
+call    6 never executed
+    $$$$$:   15-block  2
+call    7 never executed
+    $$$$$:   15-block  3
+    #####:   16:}
+    $$$$$:   16-block  0
+call    0 never executed
+        -:   17:
+function _ZN7ProductC2EjjNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEj called 28 returned 100% blocks executed 80%
+       28:   18:Product::Product(unsigned int index, unsigned int code, std::string name, unsigned int price) {
+       28:   18-block  0
+call    0 returned 28
+       28:   19:    this->index = index;
+       28:   20:    this->code = code;
+       28:   21:    this->name = name;
+call    0 returned 28
+branch  1 taken 28 (fallthrough)
+branch  2 taken 0 (throw)
+       28:   22:    this->price = price;
+       28:   23:}
+       28:   23-block  0
+    $$$$$:   23-block  1
+call    0 never executed
+        -:   24:
+function _ZN7ProductC2ERKS_ called 307 returned 100% blocks executed 80%
+      307:   25:Product::Product(const Product &product) {
+      307:   25-block  0
+call    0 returned 307
+      307:   26:    this->index = product.index;
+      307:   27:    this->code = product.code;
+      307:   28:    this->name = product.name;
+call    0 returned 307
+branch  1 taken 307 (fallthrough)
+branch  2 taken 0 (throw)
+      307:   29:    this->price = product.price;
+      307:   30:}
+      307:   30-block  0
+    $$$$$:   30-block  1
+call    0 never executed
+        -:   31:
+function _ZN7ProductD2Ev called 336 returned 100% blocks executed 100%
+      336:   32:Product::~Product() = default;
+      336:   32-block  0
+call    0 returned 336
+        -:   33:
+function _ZN7Product8getIndexEv called 85 returned 100% blocks executed 100%
+       85:   34:unsigned int Product::getIndex() {
+       85:   35:    return this->index;
+       85:   35-block  0
+        -:   36:}
+        -:   37:
+function _ZN7Product8setIndexEj called 1 returned 100% blocks executed 100%
+        1:   38:void Product::setIndex(unsigned int index) {
+        1:   39:    this->index = index;
+        1:   40:}
+        -:   41:
+function _ZN7Product7getCodeEv called 11 returned 100% blocks executed 100%
+       11:   42:unsigned int Product::getCode() {
+       11:   43:    return this->code;
+       11:   43-block  0
+        -:   44:}
+        -:   45:
+function _ZN7Product7setCodeEj called 1 returned 100% blocks executed 100%
+        1:   46:void Product::setCode(unsigned int code) {
+        1:   47:    this->code = code;
+        1:   48:}
+        -:   49:
+function _ZN7Product7getNameB5cxx11Ev called 10 returned 100% blocks executed 100%
+       10:   50:std::string Product::getName() {
+       10:   51:    return this->name;
+       10:   51-block  0
+call    0 returned 10
+        -:   52:}
+        -:   53:
+function _ZN7Product7setNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   54:void Product::setName(std::string name) {
+        1:   55:    this->name = name;
+        1:   55-block  0
+call    0 returned 1
+        1:   56:}
+        -:   57:
+function _ZN7Product8getPriceEv called 11 returned 100% blocks executed 100%
+       11:   58:unsigned int Product::getPrice() {
+       11:   59:    return this->price;
+       11:   59-block  0
+        -:   60:}
+        -:   61:
+function _ZN7Product17toStringDelimiterB5cxx11Ec called 29 returned 100% blocks executed 48%
+       29:   62:std::string Product::toStringDelimiter(char sep) {
+       58:   63:    return std::to_string(this->index) + sep +std::to_string(this->code) +
+       29:   63-block  0
+call    0 returned 29
+branch  1 taken 29 (fallthrough)
+branch  2 taken 0 (throw)
+       29:   63-block  1
+call    3 returned 29
+branch  4 taken 29 (fallthrough)
+branch  5 taken 0 (throw)
+       29:   63-block  2
+call    6 returned 29
+branch  7 taken 29 (fallthrough)
+branch  8 taken 0 (throw)
+       29:   63-block  3
+call    9 returned 29
+branch 10 taken 29 (fallthrough)
+branch 11 taken 0 (throw)
+call   12 returned 29
+call   13 returned 29
+call   14 returned 29
+call   15 returned 29
+    $$$$$:   63-block  4
+call   16 never executed
+    $$$$$:   63-block  5
+    $$$$$:   63-block  6
+call   17 never executed
+    $$$$$:   63-block  7
+    $$$$$:   63-block  8
+call   18 never executed
+    $$$$$:   63-block  9
+    $$$$$:   63-block 10
+call   19 never executed
+    $$$$$:   63-block 11
+    $$$$$:   63-block 12
+call   20 never executed
+    $$$$$:   63-block 13
+      116:   64:    sep + this->name + sep + std::to_string(this->price);
+       29:   64-block  0
+call    0 returned 29
+call    1 returned 29
+branch  2 taken 29 (fallthrough)
+branch  3 taken 0 (throw)
+       29:   64-block  1
+call    4 returned 29
+branch  5 taken 29 (fallthrough)
+branch  6 taken 0 (throw)
+       29:   64-block  2
+call    7 returned 29
+branch  8 taken 29 (fallthrough)
+branch  9 taken 0 (throw)
+       29:   64-block  3
+call   10 returned 29
+branch 11 taken 29 (fallthrough)
+branch 12 taken 0 (throw)
+       29:   64-block  4
+call   13 returned 29
+call   14 returned 29
+call   15 returned 29
+call   16 returned 29
+       29:   64-block  5
+    $$$$$:   64-block  6
+call   17 never executed
+    $$$$$:   64-block  7
+    $$$$$:   64-block  8
+call   18 never executed
+    $$$$$:   64-block  9
+    $$$$$:   64-block 10
+call   19 never executed
+        -:   65:}
+        -:   66:
+function _ZN7Product14loadFromStringENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEc called 0 returned 0% blocks executed 0%
+    #####:   67:void Product::loadFromString(std::string args, char sep) {
+    #####:   68:    std::vector<std::string> elements;
+    %%%%%:   68-block  0
+call    0 never executed
+    #####:   69:    std::stringstream ss(args);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   70:    std::string object;
+    %%%%%:   70-block  0
+call    0 never executed
+    #####:   71:    while (getline (ss, object, sep)) {
+    %%%%%:   71-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   71-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   71-block  2
+branch  6 never executed
+branch  7 never executed
+    #####:   72:        elements.push_back(object);
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   73:    }
+    #####:   74:    if(elements.size() == 4) {
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:        std::stringstream i(elements[0]);
+    %%%%%:   75-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   76:        i >> this->index;
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:        std::stringstream c(elements[1]);
+    %%%%%:   77-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   78:        c >> this->code;
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   79:        this->name = elements[2];
+    %%%%%:   79-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   80:        std::stringstream p(elements[3]);
+    %%%%%:   80-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   81:        p >> this->price;
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   82:    }
+    %%%%%:   82-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   82-block  1
+call    3 never executed
+    $$$$$:   82-block  2
+call    4 never executed
+    $$$$$:   82-block  3
+call    5 never executed
+    #####:   83:}
+    %%%%%:   83-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   83-block  1
+call    3 never executed
+    $$$$$:   83-block  2
+call    4 never executed
+    $$$$$:   83-block  3
+call    5 never executed
+        -:   84:
+function _ZN7Product8setPriceEj called 1 returned 100% blocks executed 100%
+        1:   85:void Product::setPrice(unsigned int price) {
+        1:   86:    this->price = price;
+        1:   87:}
+        -:   88:
+function _ZN7ProductaSERKS_ called 23 returned 100% blocks executed 100%
+       23:   89:Product &Product::operator=(const Product &product) {
+       23:   90:    this->index = product.index;
+       23:   91:    this->code = product.code;
+       23:   92:    this->name = product.name;
+       23:   92-block  0
+call    0 returned 23
+       23:   93:    this->price = product.price;
+        -:   94:
+       23:   95:    return *this;
+        -:   96:}
+        -:   97:
+function _ZNK7ProductltERKS_ called 0 returned 0% blocks executed 0%
+    #####:   98:bool Product::operator<(const Product &product) const {
+    #####:   99:    if(this->name == product.name) {
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  100:        if(this->price < product.price) {
+    %%%%%:  100-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  101:            return true;
+    %%%%%:  101-block  0
+        -:  102:        }
+    #####:  103:        if(this->price > product.price) {
+    %%%%%:  103-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  104:            return false;
+    %%%%%:  104-block  0
+        -:  105:        }
+        -:  106:    }
+    #####:  107:    return false;
+    %%%%%:  107-block  0
+        -:  108:}
+        -:  109:
+function _ZNK7ProductgtERKS_ called 0 returned 0% blocks executed 0%
+    #####:  110:bool Product::operator>(const Product &product) const {
+    #####:  111:    return product < *this;
+    %%%%%:  111-block  0
+call    0 never executed
+        -:  112:}
+        -:  113:
+function _ZNK7ProductleERKS_ called 0 returned 0% blocks executed 0%
+    #####:  114:bool Product::operator<=(const Product &product) const {
+    #####:  115:    return !(product < *this);
+    %%%%%:  115-block  0
+call    0 never executed
+        -:  116:}
+        -:  117:
+function _ZNK7ProductgeERKS_ called 0 returned 0% blocks executed 0%
+    #####:  118:bool Product::operator>=(const Product &product) const {
+    #####:  119:    return !(*this < product);
+    %%%%%:  119-block  0
+call    0 never executed
+        -:  120:}
+        -:  121:
+function _ZNK7ProducteqERKS_ called 22 returned 100% blocks executed 100%
+       22:  122:bool Product::operator==(const Product &product) const {
+       22:  123:    return this->code == product.code && this->name == product.name && this->price == product.price;
+       22:  123-block  0
+branch  0 taken 21 (fallthrough)
+branch  1 taken 1
+       21:  123-block  1
+call    2 returned 21
+branch  3 taken 21 (fallthrough)
+branch  4 taken 0
+       21:  123-block  2
+branch  5 taken 21 (fallthrough)
+branch  6 taken 0
+       21:  123-block  3
+        1:  123-block  4
+       22:  123-block  5
+        -:  124:}
+        -:  125:
+function _ZNK7ProductneERKS_ called 0 returned 0% blocks executed 0%
+    #####:  126:bool Product::operator!=(const Product &product) const {
+    #####:  127:    return !(*this == product);
+    %%%%%:  127-block  0
+call    0 never executed
+        -:  128:}
+        -:  129:
+function _ZrsRSiR7Product called 0 returned 0% blocks executed 0%
+    #####:  130:std::istream &operator>>(std::istream &is, Product &product) {
+        -:  131:    unsigned int index;
+    #####:  132:    std::cout << "Enter product index:"; is >> index;
+    %%%%%:  132-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  132-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  133:    product.index = index;
+        -:  134:
+        -:  135:    unsigned int code;
+    #####:  136:    std::cout << "Enter product code:"; is >> code;
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  136-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  137:    product.code = code;
+        -:  138:
+    #####:  139:    std::string name;
+    %%%%%:  139-block  0
+call    0 never executed
+    #####:  140:    std::cout << "Enter product name:"; is >> name;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  140-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  141:    product.name = name;
+    %%%%%:  141-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  142:
+        -:  143:    unsigned int price;
+    #####:  144:    std::cout << "Enter product price:"; is >> price;
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  144-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  145:    product.price = price;
+        -:  146:
+    #####:  147:    return is;
+    %%%%%:  147-block  0
+    #####:  148:}
+    %%%%%:  148-block  0
+call    0 never executed
+    $$$$$:  148-block  1
+call    1 never executed
+        -:  149:
+function _ZlsRSoRK7Product called 0 returned 0% blocks executed 0%
+    #####:  150:std::ostream &operator<<(std::ostream &os, const Product &product) {
+    #####:  151:    os << "Product index: " << product.index << '\n' <<
+    %%%%%:  151-block  0
+call    0 never executed
+call    1 never executed
+    #####:  152:    "Product code: " << product.code << '\n' <<
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  153:    "Product name: " << product.name << '\n' <<
+    #####:  154:    "Product price: " << product.price << '\n';
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+        -:  155:
+    #####:  156:    return os;
+        -:  157:}

@@ -6,7 +6,7 @@
 #define LAB_910_TUDORSUIU_CONSOLE_H
 
 
-#include "../Domain/Product.h"
+#include "../Domain/Product/Product.h"
 #include "../Service/ProductService.h"
 #include "../Service/BanknoteService.h"
 
@@ -19,6 +19,14 @@ public:
     void showMenu();
     void showAdminMenu();
     void showBuyerMenu();
+    void uiAddProduct();
+    void uiCheckProducts();
+    void uiUpdateProduct();
+    void uiDeleteProduct();
+    void uiAddBanknote();
+    void uiUpdateBanknote();
+    void uiCheckBanknotes();
+    void uiDeleteBanknote();
     void insertMoney(unsigned int &inserted, unsigned int credit, Product &product);
     void pickUpChange(unsigned int &inserted, Product &product, std::vector<Banknote> copy);
     void runMenu();

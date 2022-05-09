@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "lab_910_tudorsuiu::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab_910_tudorsuiu-Debug-a4233e70d63ddca08300.json",
+					"jsonFile" : "target-lab_910_tudorsuiu-Debug-6ee8b5349af464d22719.json",
 					"name" : "lab_910_tudorsuiu",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/cmake-build-debug",
+		"build" : "C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/cmake-build-debug-coverage",
 		"source" : "C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu"
 	},
 	"version" : 

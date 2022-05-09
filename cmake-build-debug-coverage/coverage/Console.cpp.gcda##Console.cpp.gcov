@@ -1,0 +1,1301 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/UserInterface/Console.cpp
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\UserInterface\Console.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\UserInterface\Console.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 4/18/2022.
+        -:    3://
+        -:    4:
+        -:    5:#include <iostream>
+        -:    6:#include "Console.h"
+        -:    7:
+function _ZN7ConsoleC2ER14ProductServiceR15BanknoteService called 1 returned 100% blocks executed 100%
+        1:    8:Console::Console(ProductService &serviceProduct, BanknoteService &serviceBanknote) : productService(serviceProduct),
+        1:    9:                                                                                     banknoteService(serviceBanknote) {}
+        -:   10:
+function _ZN7Console8showMenuEv called 1 returned 100% blocks executed 100%
+        1:   11:void Console::showMenu() {
+        1:   12:    std::cout << '\n';
+        1:   12-block  0
+call    0 returned 1
+        1:   13:    std::cout << "_________------MENU------_________" << '\n';
+call    0 returned 1
+call    1 returned 1
+        1:   14:    std::cout << "a. Admin profile." << '\n';
+call    0 returned 1
+call    1 returned 1
+        1:   15:    std::cout << "b. Buyer profile." << '\n';
+call    0 returned 1
+call    1 returned 1
+        1:   16:    std::cout << "x. Exit." << '\n';
+call    0 returned 1
+call    1 returned 1
+        1:   17:    std::cout << "__________________________________" << '\n';
+call    0 returned 1
+call    1 returned 1
+        1:   18:    std::cout << "Select option:";
+call    0 returned 1
+        1:   19:}
+        -:   20:
+function _ZN7Console13showAdminMenuEv called 0 returned 0% blocks executed 0%
+    #####:   21:void Console::showAdminMenu() {
+    #####:   22:    std::cout << '\n';
+    %%%%%:   22-block  0
+call    0 never executed
+    #####:   23:    std::cout << "_________---ADMIN MENU---_________" << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   24:    std::cout << "1. Add product." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   25:    std::cout << "2. Check products." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   26:    std::cout << "3. Update product." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   27:    std::cout << "4. Delete product." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   28:    std::cout << "5. Add banknote." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   29:    std::cout << "6. Check banknotes." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   30:    std::cout << "7. Update banknote." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   31:    std::cout << "8. Delete banknote." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   32:    std::cout << "x. Exit." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   33:    std::cout << "__________________________________" << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   34:    std::cout << "Select option:";
+call    0 never executed
+    #####:   35:}
+        -:   36:
+function _ZN7Console13showBuyerMenuEv called 0 returned 0% blocks executed 0%
+    #####:   37:void Console::showBuyerMenu() {
+    #####:   38:    std::cout << '\n';
+    %%%%%:   38-block  0
+call    0 never executed
+    #####:   39:    std::cout << "_________---BUYER MENU---_________" << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   40:    std::cout << "1. Show products." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   41:    std::cout << "2. Buy product." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   42:    std::cout << "x. Exit." << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   43:    std::cout << "__________________________________" << '\n';
+call    0 never executed
+call    1 never executed
+    #####:   44:    std::cout << "Select option:";
+call    0 never executed
+    #####:   45:}
+        -:   46:
+function _ZN7Console12uiAddProductEv called 0 returned 0% blocks executed 0%
+    #####:   47:void Console::uiAddProduct() {
+        -:   48:    try {
+    #####:   49:        Product product;
+    %%%%%:   49-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   50:        std::cin >> product;
+    %%%%%:   50-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   51:        productService.create(product);
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   51-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   51-block  2
+call    6 never executed
+    $$$$$:   51-block  3
+call    7 never executed
+    $$$$$:   51-block  4
+    #####:   52:    }
+call    0 never executed
+    $$$$$:   52-block  0
+call    1 never executed
+    =====:   53:    catch (std::exception &e) {
+    $$$$$:   53-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   53-block  1
+call    2 never executed
+    =====:   54:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   54-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:   55:    }
+    $$$$$:   55-block  0
+call    0 never executed
+    $$$$$:   55-block  1
+call    1 never executed
+    #####:   56:}
+    %%%%%:   56-block  0
+        -:   57:
+function _ZN7Console15uiCheckProductsEv called 0 returned 0% blocks executed 0%
+    #####:   58:void Console::uiCheckProducts() {
+        -:   59:    try {
+    #####:   60:        for(int i = 0; i < productService.read().size(); i++) {
+    %%%%%:   60-block  0
+    %%%%%:   60-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   60-block  2
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   61:            std::cout << productService.read()[i] << '\n';
+    %%%%%:   61-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   61-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   61-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   61-block  3
+call   10 never executed
+    $$$$$:   61-block  4
+call   11 never executed
+    $$$$$:   61-block  5
+        -:   62:        }
+        -:   63:    }
+    =====:   64:    catch (std::exception &e) {
+    $$$$$:   64-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   64-block  1
+call    2 never executed
+    =====:   65:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   65-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:   66:    }
+    $$$$$:   66-block  0
+call    0 never executed
+    $$$$$:   66-block  1
+call    1 never executed
+    #####:   67:}
+    %%%%%:   67-block  0
+        -:   68:
+function _ZN7Console15uiUpdateProductEv called 0 returned 0% blocks executed 0%
+    #####:   69:void Console::uiUpdateProduct() {
+        -:   70:    try {
+        -:   71:        unsigned int index;
+    #####:   72:        std::cout << "Update product with index:";
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   73:        std::cin >> index;
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   74:
+    #####:   75:        Product newProduct;
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   76:        std::cin >> newProduct;
+    %%%%%:   76-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   77:        productService.update(index, newProduct);
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   77-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   77-block  2
+call    6 never executed
+    $$$$$:   77-block  3
+call    7 never executed
+    $$$$$:   77-block  4
+    #####:   78:    }
+call    0 never executed
+    $$$$$:   78-block  0
+call    1 never executed
+    =====:   79:    catch (std::exception &e) {
+    $$$$$:   79-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   79-block  1
+call    2 never executed
+    =====:   80:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   80-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:   81:    }
+    $$$$$:   81-block  0
+call    0 never executed
+    $$$$$:   81-block  1
+call    1 never executed
+    #####:   82:}
+    %%%%%:   82-block  0
+        -:   83:
+function _ZN7Console15uiDeleteProductEv called 0 returned 0% blocks executed 0%
+    #####:   84:void Console::uiDeleteProduct() {
+        -:   85:    try {
+        -:   86:        unsigned int index;
+    #####:   87:        std::cout << "Delete product with index:";
+    %%%%%:   87-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   88:        std::cin >> index;
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:        productService.del(index);
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   90:    }
+    =====:   91:    catch (std::exception &e) {
+    $$$$$:   91-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   91-block  1
+call    2 never executed
+    =====:   92:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   92-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:   93:    }
+    $$$$$:   93-block  0
+call    0 never executed
+    $$$$$:   93-block  1
+call    1 never executed
+    #####:   94:}
+    %%%%%:   94-block  0
+        -:   95:
+function _ZN7Console13uiAddBanknoteEv called 0 returned 0% blocks executed 0%
+    #####:   96:void Console::uiAddBanknote() {
+        -:   97:    try {
+    #####:   98:        Banknote banknote;
+    %%%%%:   98-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   99:        std::cin >> banknote;
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  100:        banknoteService.create(banknote);
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  100-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  100-block  2
+call    6 never executed
+    $$$$$:  100-block  3
+call    7 never executed
+    $$$$$:  100-block  4
+    #####:  101:    }
+call    0 never executed
+    $$$$$:  101-block  0
+call    1 never executed
+    =====:  102:    catch(std::exception &e) {
+    $$$$$:  102-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  102-block  1
+call    2 never executed
+    =====:  103:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  103-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:  104:    }
+    $$$$$:  104-block  0
+call    0 never executed
+    $$$$$:  104-block  1
+call    1 never executed
+    #####:  105:}
+    %%%%%:  105-block  0
+        -:  106:
+function _ZN7Console16uiUpdateBanknoteEv called 0 returned 0% blocks executed 0%
+    #####:  107:void Console::uiUpdateBanknote() {
+        -:  108:    try {
+        -:  109:
+        -:  110:        unsigned int index;
+    #####:  111:        std::cout << "Update banknote with index:";
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  112:        std::cin >> index;
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  113:
+    #####:  114:        Banknote newBanknote;
+    %%%%%:  114-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  115:        std::cin >> newBanknote;
+    %%%%%:  115-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  116:
+    #####:  117:        banknoteService.update(index, newBanknote);
+    %%%%%:  117-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  117-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  117-block  2
+call    6 never executed
+    $$$$$:  117-block  3
+call    7 never executed
+    $$$$$:  117-block  4
+    #####:  118:    }
+call    0 never executed
+    $$$$$:  118-block  0
+call    1 never executed
+    =====:  119:    catch (std::exception &e) {
+    $$$$$:  119-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  119-block  1
+call    2 never executed
+    =====:  120:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  120-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:  121:    }
+    $$$$$:  121-block  0
+call    0 never executed
+    $$$$$:  121-block  1
+call    1 never executed
+    #####:  122:}
+    %%%%%:  122-block  0
+        -:  123:
+function _ZN7Console16uiCheckBanknotesEv called 0 returned 0% blocks executed 0%
+    #####:  124:void Console::uiCheckBanknotes() {
+        -:  125:    try {
+    #####:  126:        for(int i = 0; i < banknoteService.read().size(); i++) {
+    %%%%%:  126-block  0
+    %%%%%:  126-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  126-block  2
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  127:            std::cout << banknoteService.read()[i] << '\n';
+    %%%%%:  127-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  127-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  127-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  127-block  3
+call   10 never executed
+    $$$$$:  127-block  4
+call   11 never executed
+    $$$$$:  127-block  5
+        -:  128:        }
+        -:  129:    }
+    =====:  130:    catch(std::exception &e) {
+    $$$$$:  130-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  130-block  1
+call    2 never executed
+    =====:  131:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  131-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:  132:    }
+    $$$$$:  132-block  0
+call    0 never executed
+    $$$$$:  132-block  1
+call    1 never executed
+    #####:  133:}
+    %%%%%:  133-block  0
+        -:  134:
+function _ZN7Console16uiDeleteBanknoteEv called 0 returned 0% blocks executed 0%
+    #####:  135:void Console::uiDeleteBanknote() {
+        -:  136:    try {
+        -:  137:        unsigned int index;
+    #####:  138:        std::cout << "Delete banknotes with index:";
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  139:        std::cin >> index;
+    %%%%%:  139-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  140:        banknoteService.del(index);
+    %%%%%:  140-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  141:    }
+    =====:  142:    catch(std::exception &e) {
+    $$$$$:  142-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  142-block  1
+call    2 never executed
+    =====:  143:        std::cout << e.what() << '\n';
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  143-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:  144:    }
+    $$$$$:  144-block  0
+call    0 never executed
+    $$$$$:  144-block  1
+call    1 never executed
+    #####:  145:}
+    %%%%%:  145-block  0
+        -:  146:
+function _ZN7Console11insertMoneyERjjR7Product called 0 returned 0% blocks executed 0%
+    #####:  147:void Console::insertMoney(unsigned int &inserted, unsigned int credit, Product &product) {
+    #####:  148:    while(inserted < product.getPrice()) {
+    %%%%%:  148-block  0
+    %%%%%:  148-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  149:        std::cout << "Please insert credit (1/5/10/50/100):";
+    %%%%%:  149-block  0
+call    0 never executed
+    #####:  150:        std::cin >> credit;
+call    0 never executed
+        -:  151:
+    #####:  152:        if(credit == 1 || credit == 5 || credit == 10 || credit == 50 || credit == 100) {
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  152-block  0
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  152-block  1
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  152-block  2
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  152-block  3
+branch  8 never executed
+branch  9 never executed
+    #####:  153:            Banknote banknote = (banknoteService.getBanknoteByValue(credit));
+    %%%%%:  153-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  154:            Banknote newBanknote(banknote.getIndex(), banknote.getValue(), banknote.getNoOccurrences() + 1);
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  154-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  154-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  154-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        -:  155:
+    #####:  156:            banknoteService.update(banknote.getIndex(), newBanknote);
+    %%%%%:  156-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  156-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  156-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  156-block  3
+call    9 never executed
+    $$$$$:  156-block  4
+call   10 never executed
+    $$$$$:  156-block  5
+    #####:  157:            inserted += credit;
+    #####:  158:        }
+call    0 never executed
+call    1 never executed
+    $$$$$:  158-block  0
+call    2 never executed
+    $$$$$:  158-block  1
+call    3 never executed
+        -:  159:        else {
+    #####:  160:            std::cout << "We don't accept that type of currency." << '\n';
+    %%%%%:  160-block  0
+call    0 never executed
+call    1 never executed
+        -:  161:        }
+        -:  162:    }
+    #####:  163:}
+    %%%%%:  163-block  0
+        -:  164:
+function _ZN7Console12pickUpChangeERjR7ProductSt6vectorI8BanknoteSaIS4_EE called 0 returned 0% blocks executed 0%
+    #####:  165:void Console::pickUpChange(unsigned int &inserted, Product &product, std::vector<Banknote> copy) {
+    #####:  166:    std::vector<Banknote> result = banknoteService.change(product.getPrice(), inserted);
+    %%%%%:  166-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  166-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  167:    if(productService.numberOfProductsByName(product.getName()) == 0) {
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  167-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  167-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:  167-block  3
+call    9 never executed
+    $$$$$:  167-block  4
+    #####:  168:        std::cout << "We don't have this product." << '\n';
+    %%%%%:  168-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  168-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  169:    }
+        -:  170:    else {
+    #####:  171:        if (inserted - product.getPrice() == 0) {
+    %%%%%:  171-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  171-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  172:            std::cout << "Thanks for your purchase!" << '\n';
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  172-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  173:            unsigned int id = productService.getProductByCode(product.getCode()).getIndex();
+    %%%%%:  173-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  173-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  173-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  173-block  3
+call    9 never executed
+    $$$$$:  173-block  4
+call   10 never executed
+    $$$$$:  173-block  5
+    #####:  174:            productService.del(id);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  175:        } else {
+    #####:  176:            unsigned int checker = 0;
+    #####:  177:            for (int i = 0; i < result.size(); i++) {
+    %%%%%:  177-block  0
+    %%%%%:  177-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  178:                checker += result[i].getNoOccurrences();
+    %%%%%:  178-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  178-block  1
+        -:  179:            }
+    #####:  180:            if (checker == 0) {
+    %%%%%:  180-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  181:                banknoteService.updateAll(copy);
+    %%%%%:  181-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  181-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  181-block  2
+call    6 never executed
+    $$$$$:  181-block  3
+call    7 never executed
+    $$$$$:  181-block  4
+        -:  182:                std::cout
+        -:  183:                        << "Our vending machine doesn't have money. Pick up your money."
+    #####:  184:                        << '\n';
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  184-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  185:            } else {
+    #####:  186:                unsigned int change = 0;
+    #####:  187:                for (int i = 0; i < result.size(); i++) {
+    %%%%%:  187-block  0
+    %%%%%:  187-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  188:                    change += result[i].getValue() *
+    %%%%%:  188-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  189:                              result[i].getNoOccurrences();
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+        -:  190:                }
+        -:  191:
+    #####:  192:                if (change == inserted - product.getPrice()) {
+    %%%%%:  192-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  192-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  193:                    unsigned int id = productService.getProductByCode(product.getCode()).getIndex();
+    %%%%%:  193-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  193-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  193-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  193-block  3
+call    9 never executed
+    $$$$$:  193-block  4
+call   10 never executed
+    $$$$$:  193-block  5
+    #####:  194:                    productService.del(id);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  195:                    std::cout << "Please pick up your change: " << '\n';
+    %%%%%:  195-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  195-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  196:                    for (int i = 0; i < result.size(); i++) {
+    %%%%%:  196-block  0
+    %%%%%:  196-block  1
+    %%%%%:  196-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  197:                        if (result[i].getNoOccurrences() != 0) {
+    %%%%%:  197-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  197-block  1
+branch  4 never executed
+branch  5 never executed
+    #####:  198:                            std::cout << result[i].getNoOccurrences()
+    %%%%%:  198-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  198-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  199:                                      << " banknotes of "
+    %%%%%:  199-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  200:                                      << result[i].getValue() << " RON."
+    %%%%%:  200-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  200-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  201:                                      << '\n';
+    %%%%%:  201-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  201-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  202:                        }
+        -:  203:                    }
+    #####:  204:                    std::cout << "A total of: " << change << " RON." << '\n'
+    %%%%%:  204-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  204-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  205:                              << "Thanks for your purchase!" << '\n';
+    %%%%%:  205-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  205-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  205-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  205-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        -:  206:                } else {
+    #####:  207:                    banknoteService.updateAll(copy);
+    %%%%%:  207-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  207-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  207-block  2
+call    6 never executed
+    $$$$$:  207-block  3
+call    7 never executed
+    $$$$$:  207-block  4
+        -:  208:                    std::cout
+        -:  209:                            << "Our vending machine doesn't have money. Pick up your money."
+    #####:  210:                            << '\n';
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  210-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  211:                }
+        -:  212:            }
+        -:  213:        }
+        -:  214:    }
+    #####:  215:}
+    %%%%%:  215-block  0
+call    0 never executed
+    $$$$$:  215-block  1
+call    1 never executed
+        -:  216:
+function _ZN7Console7runMenuEv called 1 returned 100% blocks executed 8%
+        1:  217:void Console::runMenu() {
+        -:  218:    char menuOption;
+        -:  219:    do {
+        1:  220:        showMenu();
+        1:  220-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  221:        std::cin >> menuOption;
+        1:  221-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  222:        std::cout << '\n';
+        1:  222-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  223:        switch(menuOption) {
+        1:  223-block  0
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 1
+branch  3 taken 0
+    #####:  224:            case 'a': {
+        -:  225:                char adminOption;
+        -:  226:                do {
+    #####:  227:                    showAdminMenu();
+    %%%%%:  227-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  228:                    std::cin >> adminOption;
+    %%%%%:  228-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  229:                    std::cout << '\n';
+    %%%%%:  229-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  230:                    switch(adminOption) {
+    %%%%%:  230-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:  231:                        case '1': {
+    #####:  232:                            uiAddProduct();
+    %%%%%:  232-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  233:                            break;
+    %%%%%:  233-block  0
+        -:  234:                        }
+    #####:  235:                        case '2': {
+    #####:  236:                            uiCheckProducts();
+    %%%%%:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  237:                            break;
+    %%%%%:  237-block  0
+        -:  238:                        }
+    #####:  239:                        case '3': {
+    #####:  240:                            uiUpdateProduct();
+    %%%%%:  240-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  241:                            break;
+    %%%%%:  241-block  0
+        -:  242:                        }
+    #####:  243:                        case '4': {
+    #####:  244:                            uiDeleteProduct();
+    %%%%%:  244-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  245:                            break;
+    %%%%%:  245-block  0
+        -:  246:                        }
+    #####:  247:                        case '5': {
+    #####:  248:                            uiAddBanknote();
+    %%%%%:  248-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  249:                            break;
+    %%%%%:  249-block  0
+        -:  250:                        }
+    #####:  251:                        case '6': {
+    #####:  252:                            uiCheckBanknotes();
+    %%%%%:  252-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  253:                            break;
+    %%%%%:  253-block  0
+        -:  254:                        }
+    #####:  255:                        case '7': {
+    #####:  256:                            uiUpdateBanknote();
+    %%%%%:  256-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  257:                            break;
+    %%%%%:  257-block  0
+        -:  258:                        }
+    #####:  259:                        case '8': {
+    #####:  260:                            uiDeleteBanknote();
+    %%%%%:  260-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  261:                            break;
+    %%%%%:  261-block  0
+        -:  262:                        }
+    #####:  263:                        case 'x': {
+    #####:  264:                            break;
+    %%%%%:  264-block  0
+        -:  265:                        }
+    #####:  266:                        default: {
+    #####:  267:                            std::cout << "Invalid option! Please try again!" << '\n';
+    %%%%%:  267-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  267-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  268:                        }
+        -:  269:                    }
+    #####:  270:                }while(adminOption != 'x');
+    %%%%%:  270-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  271:                break;
+    %%%%%:  271-block  0
+        -:  272:            }
+    #####:  273:            case 'b': {
+    %%%%%:  273-block  0
+        -:  274:                char buyerOption;
+        -:  275:                do {
+    #####:  276:                    showBuyerMenu();
+    %%%%%:  276-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  277:                    std::cin >> buyerOption;
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  278:                    std::cout << '\n';
+    %%%%%:  278-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  279:                    std::vector<Product> uniqueItems = productService.showUniqueProducts();
+    %%%%%:  279-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  280:                    switch(buyerOption) {
+    %%%%%:  280-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  281:                        case '1': {
+    #####:  282:                            for(int i = 0; i < uniqueItems.size(); i++) {
+    %%%%%:  282-block  0
+    %%%%%:  282-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  283:                                Product product;
+    %%%%%:  283-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  284:                                product = uniqueItems[i];
+    %%%%%:  284-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  285:                                std::cout << "Product code: " << product.getCode() << '\n' <<
+    %%%%%:  285-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  285-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  285-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:  286:                                "Product name: " << product.getName() << '\n' <<
+    %%%%%:  286-block  0
+call    0 never executed
+    $$$$$:  286-block  1
+call    1 never executed
+    $$$$$:  286-block  2
+    #####:  287:                                "Product price: " << product.getPrice() << '\n' << '\n';
+    %%%%%:  287-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  287-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  287-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  287-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  287-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  287-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  287-block  6
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  287-block  7
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  287-block  8
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  287-block  9
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+    #####:  288:                            }
+call    0 never executed
+    $$$$$:  288-block  0
+call    1 never executed
+    #####:  289:                            break;
+    %%%%%:  289-block  0
+        -:  290:                        }
+    #####:  291:                        case '2': {
+        -:  292:                            unsigned int code;
+    #####:  293:                            std::cout << "Please choose a product:";
+    %%%%%:  293-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  294:                            std::cin >> code;
+    %%%%%:  294-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  295:
+    #####:  296:                            unsigned int inserted = 0;
+        -:  297:                            unsigned int credit;
+    #####:  298:                            Product product = productService.getProductByCode(code);
+    %%%%%:  298-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  299:                            std::vector<Banknote> copy = banknoteService.read();
+    %%%%%:  299-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  300:
+    #####:  301:                            insertMoney(inserted, credit, product);
+    %%%%%:  301-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  302:                            pickUpChange(inserted, product, copy);
+    %%%%%:  302-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  302-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  302-block  2
+call    6 never executed
+    $$$$$:  302-block  3
+call    7 never executed
+    $$$$$:  302-block  4
+    #####:  303:                            break;
+    #####:  304:                        }
+    %%%%%:  304-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  304-block  1
+call    2 never executed
+    $$$$$:  304-block  2
+call    3 never executed
+    #####:  305:                        case 'x': {
+    #####:  306:                            break;
+    %%%%%:  306-block  0
+        -:  307:                        }
+    #####:  308:                        default: {
+    #####:  309:                            std::cout << "Invalid option! Please try again!" << '\n';
+    %%%%%:  309-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  309-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  310:                        }
+        -:  311:                    }
+    #####:  312:                }while(buyerOption != 'x');
+    %%%%%:  312-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  312-block  1
+call    3 never executed
+    #####:  313:                break;
+    %%%%%:  313-block  0
+        -:  314:            }
+        1:  315:            case 'x': {
+        1:  316:                break;
+        1:  316-block  0
+        -:  317:            }
+    #####:  318:            default: {
+    #####:  319:                std::cout << "Invalid option! Please try again!" << '\n';
+    %%%%%:  319-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  319-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  320:            }
+        -:  321:        }
+        1:  322:    }while(menuOption != 'x');
+        1:  322-block  0
+branch  0 taken 0
+branch  1 taken 1 (fallthrough)
+        1:  323:}
+        1:  323-block  0
+        -:  324:

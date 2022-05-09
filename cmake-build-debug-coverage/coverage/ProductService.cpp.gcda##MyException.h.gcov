@@ -1,0 +1,40 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/MyException.h
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Service\ProductService.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Service\ProductService.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 5/9/2022.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB_910_TUDORSUIU_MYEXCEPTION_H
+        -:    6:#define LAB_910_TUDORSUIU_MYEXCEPTION_H
+        -:    7:
+        -:    8:
+        -:    9:#include <exception>
+        -:   10:
+        -:   11:class MyException : public std::exception {
+        -:   12:private:
+        -:   13:    const char *message;
+        -:   14:public:
+        -:   15:    /**
+        -:   16:     * Constructor
+        -:   17:     * @param message: exception message
+        -:   18:     */
+function _ZN11MyExceptionC1EPKc called 0 returned 0% blocks executed 0%
+    #####:   19:    MyException(const char *message) : message(message) {}
+    %%%%%:   19-block  0
+call    0 never executed
+        -:   20:
+        -:   21:    /**
+        -:   22:     * Getter for exception message
+        -:   23:     * @return: exception message
+        -:   24:     */
+function _ZNK11MyException4whatEv called 0 returned 0% blocks executed 0%
+    #####:   25:    const char *what() const noexcept override {
+    #####:   26:        return message;
+    %%%%%:   26-block  0
+        -:   27:    }
+        -:   28:};
+        -:   29:
+        -:   30:
+        -:   31:#endif //LAB_910_TUDORSUIU_MYEXCEPTION_H

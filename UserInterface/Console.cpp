@@ -11,8 +11,8 @@ Console::Console(ProductService &serviceProduct, BanknoteService &serviceBanknot
 void Console::showMenu() {
     std::cout << '\n';
     std::cout << "_________------MENU------_________" << '\n';
-    std::cout << "a. Admin profile." << '\n';
-    std::cout << "b. Buyer profile." << '\n';
+    std::cout << "1. Admin profile." << '\n';
+    std::cout << "2. Buyer profile." << '\n';
     std::cout << "x. Exit." << '\n';
     std::cout << "__________________________________" << '\n';
     std::cout << "Select option:";
@@ -42,6 +42,106 @@ void Console::showBuyerMenu() {
     std::cout << "x. Exit." << '\n';
     std::cout << "__________________________________" << '\n';
     std::cout << "Select option:";
+}
+
+void Console::uiAddProduct() {
+    try {
+        Product product;
+        std::cin >> product;
+        productService.create(product);
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
+}
+
+void Console::uiCheckProducts() {
+    try {
+        for(int i = 0; i < productService.read().size(); i++) {
+            std::cout << productService.read()[i] << '\n';
+        }
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
+}
+
+void Console::uiUpdateProduct() {
+    try {
+        unsigned int index;
+        std::cout << "Update product with index:";
+        std::cin >> index;
+
+        Product newProduct;
+        std::cin >> newProduct;
+        productService.update(index, newProduct);
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
+}
+
+void Console::uiDeleteProduct() {
+    try {
+        unsigned int index;
+        std::cout << "Delete product with index:";
+        std::cin >> index;
+        productService.del(index);
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
+}
+
+void Console::uiAddBanknote() {
+    try {
+        Banknote banknote;
+        std::cin >> banknote;
+        banknoteService.create(banknote);
+    }
+    catch(std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
+}
+
+void Console::uiUpdateBanknote() {
+    try {
+
+        unsigned int index;
+        std::cout << "Update banknote with index:";
+        std::cin >> index;
+
+        Banknote newBanknote;
+        std::cin >> newBanknote;
+
+        banknoteService.update(index, newBanknote);
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
+}
+
+void Console::uiCheckBanknotes() {
+    try {
+        for(int i = 0; i < banknoteService.read().size(); i++) {
+            std::cout << banknoteService.read()[i] << '\n';
+        }
+    }
+    catch(std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
+}
+
+void Console::uiDeleteBanknote() {
+    try {
+        unsigned int index;
+        std::cout << "Delete banknotes with index:";
+        std::cin >> index;
+        banknoteService.del(index);
+    }
+    catch(std::exception &e) {
+        std::cout << e.what() << '\n';
+    }
 }
 
 void Console::insertMoney(unsigned int &inserted, unsigned int credit, Product &product) {
@@ -121,7 +221,7 @@ void Console::runMenu() {
         std::cin >> menuOption;
         std::cout << '\n';
         switch(menuOption) {
-            case 'a': {
+            case '1': {
                 char adminOption;
                 do {
                     showAdminMenu();
@@ -129,67 +229,35 @@ void Console::runMenu() {
                     std::cout << '\n';
                     switch(adminOption) {
                         case '1': {
-                            Product product;
-                            std::cin >> product;
-
-                            productService.create(product);
+                            uiAddProduct();
                             break;
                         }
                         case '2': {
-                            for(int i = 0; i < productService.read().size(); i++) {
-                                std::cout << productService.read()[i] << '\n';
-                            }
+                            uiCheckProducts();
                             break;
                         }
                         case '3': {
-                            unsigned int index;
-                            std::cout << "Update product with index:";
-                            std::cin >> index;
-
-                            Product newProduct;
-                            std::cin >> newProduct;
-
-                            productService.update(index, newProduct);
+                            uiUpdateProduct();
                             break;
                         }
                         case '4': {
-                            unsigned int index;
-                            std::cout << "Delete product with index:";
-                            std::cin >> index;
-
-                            productService.del(index);
+                            uiDeleteProduct();
                             break;
                         }
                         case '5': {
-                            Banknote banknote;
-                            std::cin >> banknote;
-
-                            banknoteService.create(banknote);
+                            uiAddBanknote();
                             break;
                         }
                         case '6': {
-                            for(int i = 0; i < banknoteService.read().size(); i++) {
-                                std::cout << banknoteService.read()[i] << '\n';
-                            }
+                            uiCheckBanknotes();
                             break;
                         }
                         case '7': {
-                            unsigned int index;
-                            std::cout << "Update banknote with index:";
-                            std::cin >> index;
-
-                            Banknote newBanknote;
-                            std::cin >> newBanknote;
-
-                            banknoteService.update(index, newBanknote);
+                            uiUpdateBanknote();
                             break;
                         }
                         case '8': {
-                            unsigned int index;
-                            std::cout << "Delete banknotes with index:";
-                            std::cin >> index;
-
-                            banknoteService.del(index);
+                            uiDeleteBanknote();
                             break;
                         }
                         case 'x': {
@@ -202,7 +270,7 @@ void Console::runMenu() {
                 }while(adminOption != 'x');
                 break;
             }
-            case 'b': {
+            case '2': {
                 char buyerOption;
                 do {
                     showBuyerMenu();

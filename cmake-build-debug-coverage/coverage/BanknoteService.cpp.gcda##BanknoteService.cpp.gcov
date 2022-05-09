@@ -1,0 +1,647 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Service/BanknoteService.cpp
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Service\BanknoteService.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Service\BanknoteService.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 4/30/2022.
+        -:    3://
+        -:    4:
+        -:    5:#include "BanknoteService.h"
+        -:    6:#include "../Domain/MyException.h"
+        -:    7:
+function _ZN15BanknoteServiceC2ER11IRepositoryI8BanknoteE called 2 returned 100% blocks executed 100%
+        2:    8:BanknoteService::BanknoteService(IRepository<Banknote> &iRepository) : repository(iRepository) {}
+        -:    9:
+function _ZN15BanknoteService6createE8Banknote called 10 returned 100% blocks executed 58%
+       10:   10:void BanknoteService::create(Banknote entity) {
+       10:   11:    if(doesExist(entity.getIndex())) {
+       10:   11-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 0 (fallthrough)
+branch  3 taken 10
+    #####:   12:        throw MyException("There already exist a banknote with this id.");
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   13:    }
+       10:   14:    validator.validate(entity);
+       10:   14-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   14-block  1
+call    4 returned 10
+    $$$$$:   14-block  2
+call    5 never executed
+    $$$$$:   14-block  3
+call    6 never executed
+       10:   15:    repository.addEntity(entity);
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:   15-block  0
+call    4 returned 10
+    $$$$$:   15-block  1
+call    5 never executed
+       10:   16:}
+        -:   17:
+function _ZN15BanknoteService4readEj called 0 returned 0% blocks executed 0%
+    #####:   18:Banknote BanknoteService::read(unsigned int index) {
+    #####:   19:    if(!doesExist(index)) {
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   20:        throw MyException("Banknote with given id doesn't exist.");
+    %%%%%:   20-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   21:    }
+    #####:   22:    return repository.getAll()[repository.getPosByIndex(index)];
+    %%%%%:   22-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   22-block  1
+call    6 never executed
+    %%%%%:   22-block  2
+    $$$$$:   22-block  3
+call    7 never executed
+        -:   23:}
+        -:   24:
+function _ZN15BanknoteService4readEv called 19 returned 100% blocks executed 100%
+       19:   25:std::vector<Banknote> BanknoteService::read() {
+       19:   26:    return repository.getAll();
+       19:   26-block  0
+call    0 returned 19
+        -:   27:}
+        -:   28:
+function _ZN15BanknoteService6updateEj8Banknote called 2 returned 100% blocks executed 56%
+        2:   29:void BanknoteService::update(unsigned int index, Banknote newEntity) {
+        2:   30:    if(!doesExist(index)) {
+        2:   30-block  0
+call    0 returned 2
+branch  1 taken 0 (fallthrough)
+branch  2 taken 2
+    #####:   31:        throw MyException("The banknote that was going to be updated wasn't found.");
+    %%%%%:   31-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   32:    }
+        2:   33:    validator.validate(newEntity);
+        2:   33-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   33-block  1
+call    4 returned 2
+    $$$$$:   33-block  2
+call    5 never executed
+    $$$$$:   33-block  3
+call    6 never executed
+        2:   34:    repository.updateEntity(index, newEntity);
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   34-block  0
+call    4 returned 2
+    $$$$$:   34-block  1
+call    5 never executed
+        2:   35:}
+        -:   36:
+function _ZN15BanknoteService3delEj called 5 returned 100% blocks executed 57%
+        5:   37:void BanknoteService::del(unsigned int index) {
+        5:   38:    if(!doesExist(index)) {
+        5:   38-block  0
+call    0 returned 5
+branch  1 taken 0 (fallthrough)
+branch  2 taken 5
+    #####:   39:        throw MyException("Banknote with given id doesn't exist.");
+    %%%%%:   39-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   40:    }
+        5:   41:    repository.deleteEntity(index);
+        5:   41-block  0
+call    0 returned 5
+        5:   42:}
+        -:   43:
+function _ZN15BanknoteService9updateAllESt6vectorI8BanknoteSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:   44:void BanknoteService::updateAll(std::vector<Banknote> newVector) {
+    #####:   45:    for(int i = 0; i < 5; i++) {
+    %%%%%:   45-block  0
+    %%%%%:   45-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   46:        repository.updateEntity(newVector[i].getIndex(), newVector[i]);
+    %%%%%:   46-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   46-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   46-block  2
+call    9 never executed
+    $$$$$:   46-block  3
+call   10 never executed
+        -:   47:    }
+    #####:   48:}
+    %%%%%:   48-block  0
+        -:   49:
+function _ZN15BanknoteService18getBanknoteByValueEj called 0 returned 0% blocks executed 0%
+    #####:   50:Banknote BanknoteService::getBanknoteByValue(unsigned int value) {
+    #####:   51:    for(int i = 0; i < repository.getAll().size(); i++) {
+    %%%%%:   51-block  0
+    %%%%%:   51-block  1
+    %%%%%:   51-block  2
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:   52:        if(repository.getAll()[i].getValue() == value) {
+    %%%%%:   52-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   52-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   52-block  2
+call    8 never executed
+    $$$$$:   52-block  3
+call    9 never executed
+    #####:   53:            return repository.getAll()[i];
+    %%%%%:   53-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   53-block  1
+call    5 never executed
+    %%%%%:   53-block  2
+    $$$$$:   53-block  3
+call    6 never executed
+        -:   54:        }
+        -:   55:    }
+    #####:   56:}
+    %%%%%:   56-block  0
+        -:   57:
+function _ZN15BanknoteService9doesExistEj called 17 returned 100% blocks executed 88%
+       17:   58:bool BanknoteService::doesExist(unsigned int index) {
+       40:   59:    for(int i = 0; i < repository.getAll().size(); i++) {
+       17:   59-block  0
+       23:   59-block  1
+       40:   59-block  2
+call    0 returned 40
+call    1 returned 40
+call    2 returned 40
+branch  3 taken 30
+branch  4 taken 10 (fallthrough)
+       30:   60:        if(index == repository.getAll()[i].getIndex()) {
+       30:   60-block  0
+call    0 returned 30
+call    1 returned 30
+call    2 returned 30
+branch  3 taken 30 (fallthrough)
+branch  4 taken 0 (throw)
+       30:   60-block  1
+call    5 returned 30
+branch  6 taken 7 (fallthrough)
+branch  7 taken 23
+    $$$$$:   60-block  2
+call    8 never executed
+        7:   61:            return true;
+        7:   61-block  0
+        -:   62:        }
+        -:   63:    }
+       10:   64:    return false;
+       10:   64-block  0
+        -:   65:}
+        -:   66:
+function _ZN15BanknoteService6changeEjj called 1 returned 100% blocks executed 50%
+        1:   67:std::vector<Banknote> BanknoteService::change(unsigned int productPrice,
+        -:   68:                                       unsigned int insertedAmount) {
+        1:   69:    unsigned int changeValue = insertedAmount - productPrice;
+        1:   70:    std::vector<Banknote> changeVector;
+        1:   70-block  0
+call    0 returned 1
+        1:   71:    changeVector.push_back(Banknote(1, 100, 0));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   71-block  1
+call    6 returned 1
+    $$$$$:   71-block  2
+call    7 never executed
+    $$$$$:   71-block  3
+        1:   72:    changeVector.push_back(Banknote(2, 50, 0));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   72-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   72-block  1
+call    6 returned 1
+    $$$$$:   72-block  2
+call    7 never executed
+    $$$$$:   72-block  3
+        1:   73:    changeVector.push_back(Banknote(3, 10, 0));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   73-block  1
+call    6 returned 1
+    $$$$$:   73-block  2
+call    7 never executed
+    $$$$$:   73-block  3
+        1:   74:    changeVector.push_back(Banknote(4, 5, 0));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   74-block  1
+call    6 returned 1
+    $$$$$:   74-block  2
+call    7 never executed
+    $$$$$:   74-block  3
+        1:   75:    changeVector.push_back(Banknote(5, 1, 0));
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   75-block  1
+call    6 returned 1
+    $$$$$:   75-block  2
+call    7 never executed
+    $$$$$:   75-block  3
+        -:   76:
+       3*:   77:    if(repository.getAll().size() != 5 ||
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0
+    %%%%%:   77-block  1
+        1:   77-block  2
+        1:   77-block  3
+call    6 returned 1
+        1:   77-block  4
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    $$$$$:   77-block  5
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   77-block  6
+call   11 never executed
+    $$$$$:   77-block  7
+       2*:   78:    (repository.getAll()[0].getNoOccurrences() == 0 &&
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   78-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+        1:   78-block  3
+call    9 returned 1
+        1:   78-block  4
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+    $$$$$:   78-block  5
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   78-block  6
+call   14 never executed
+    $$$$$:   78-block  7
+       1*:   79:    repository.getAll()[1].getNoOccurrences() == 0 &&
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   79-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   79-block  2
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   79-block  3
+call    9 never executed
+        1:   79-block  4
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+    $$$$$:   79-block  5
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   79-block  6
+call   14 never executed
+    $$$$$:   79-block  7
+       1*:   80:    repository.getAll()[2].getNoOccurrences() == 0 &&
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   80-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   80-block  2
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   80-block  3
+call    9 never executed
+        1:   80-block  4
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    $$$$$:   80-block  5
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   80-block  6
+call   14 never executed
+    $$$$$:   80-block  7
+       1*:   81:    repository.getAll()[3].getNoOccurrences() == 0 &&
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   81-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   81-block  2
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   81-block  3
+call    9 never executed
+        1:   81-block  4
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    $$$$$:   81-block  5
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   81-block  6
+call   14 never executed
+    $$$$$:   81-block  7
+       1*:   82:    repository.getAll()[4].getNoOccurrences() == 0)) {
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   82-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   82-block  2
+branch  7 never executed
+branch  8 never executed
+        1:   82-block  3
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1
+    %%%%%:   82-block  4
+call   11 never executed
+        1:   82-block  5
+branch 12 taken 0 (fallthrough)
+branch 13 taken 1
+    $$$$$:   82-block  6
+branch 14 never executed
+branch 15 never executed
+    $$$$$:   82-block  7
+call   16 never executed
+    $$$$$:   82-block  8
+    #####:   83:        return changeVector;
+    %%%%%:   83-block  0
+        -:   84:    }
+        -:   85:    else {
+        6:   86:        for(int i = 0; i < repository.getAll().size(); i++) {
+        1:   86-block  0
+        5:   86-block  1
+        6:   86-block  2
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   86-block  3
+call    3 returned 6
+call    4 returned 6
+branch  5 taken 5
+branch  6 taken 1 (fallthrough)
+       11:   87:            while(changeValue >= repository.getAll()[i].getValue() && repository.getAll()[i].getNoOccurrences() > 0) {
+        5:   87-block  0
+       11:   87-block  1
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   87-block  2
+call    3 returned 11
+call    4 returned 11
+branch  5 taken 11 (fallthrough)
+branch  6 taken 0 (throw)
+       11:   87-block  3
+branch  7 taken 6 (fallthrough)
+branch  8 taken 5
+        6:   87-block  4
+call    9 returned 6
+branch 10 taken 6 (fallthrough)
+branch 11 taken 0 (throw)
+        6:   87-block  5
+call   12 returned 6
+call   13 returned 6
+branch 14 taken 6 (fallthrough)
+branch 15 taken 0 (throw)
+        6:   87-block  6
+branch 16 taken 6 (fallthrough)
+branch 17 taken 0
+        6:   87-block  7
+        5:   87-block  8
+       11:   87-block  9
+branch 18 taken 6 (fallthrough)
+branch 19 taken 5
+        6:   87-block 10
+call   20 returned 6
+       11:   87-block 11
+branch 21 taken 11 (fallthrough)
+branch 22 taken 0
+       11:   87-block 12
+call   23 returned 11
+       11:   87-block 13
+branch 24 taken 6
+branch 25 taken 5 (fallthrough)
+    $$$$$:   87-block 14
+branch 26 never executed
+branch 27 never executed
+    $$$$$:   87-block 15
+call   28 never executed
+    $$$$$:   87-block 16
+    $$$$$:   87-block 17
+branch 29 never executed
+branch 30 never executed
+    $$$$$:   87-block 18
+call   31 never executed
+    $$$$$:   87-block 19
+        6:   88:                changeValue -= repository.getAll()[i].getValue();
+        6:   88-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   88-block  1
+call    3 returned 6
+call    4 returned 6
+branch  5 taken 6 (fallthrough)
+branch  6 taken 0 (throw)
+        6:   88-block  2
+call    7 returned 6
+    $$$$$:   88-block  3
+call    8 never executed
+    $$$$$:   88-block  4
+        -:   89:
+       12:   90:                Banknote updatedBanknote(repository.getAll()[i].getIndex(), repository.getAll()[i].getValue(), repository.getAll()[i].getNoOccurrences() - 1);
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   90-block  0
+call    3 returned 6
+call    4 returned 6
+branch  5 taken 6 (fallthrough)
+branch  6 taken 0 (throw)
+        6:   90-block  1
+call    7 returned 6
+branch  8 taken 6 (fallthrough)
+branch  9 taken 0 (throw)
+        6:   90-block  2
+call   10 returned 6
+call   11 returned 6
+branch 12 taken 6 (fallthrough)
+branch 13 taken 0 (throw)
+        6:   90-block  3
+call   14 returned 6
+branch 15 taken 6 (fallthrough)
+branch 16 taken 0 (throw)
+        6:   90-block  4
+call   17 returned 6
+call   18 returned 6
+branch 19 taken 6 (fallthrough)
+branch 20 taken 0 (throw)
+        6:   90-block  5
+call   21 returned 6
+branch 22 taken 6 (fallthrough)
+branch 23 taken 0 (throw)
+call   24 returned 6
+call   25 returned 6
+    $$$$$:   90-block  6
+    $$$$$:   90-block  7
+    $$$$$:   90-block  8
+        6:   91:                repository.updateEntity(repository.getAll()[i].getIndex(), updatedBanknote);
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   91-block  0
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        6:   91-block  1
+call    6 returned 6
+call    7 returned 6
+branch  8 taken 6 (fallthrough)
+branch  9 taken 0 (throw)
+        6:   91-block  2
+call   10 returned 6
+branch 11 taken 6 (fallthrough)
+branch 12 taken 0 (throw)
+        6:   91-block  3
+call   13 returned 6
+call   14 returned 6
+    $$$$$:   91-block  4
+call   15 never executed
+    $$$$$:   91-block  5
+    $$$$$:   91-block  6
+call   16 never executed
+    $$$$$:   91-block  7
+        -:   92:
+        6:   93:                Banknote newBanknote(changeVector[i].getIndex(), changeVector[i].getValue(), changeVector[i].getNoOccurrences() + 1);
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   93-block  0
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   93-block  1
+call    8 returned 6
+call    9 returned 6
+branch 10 taken 6 (fallthrough)
+branch 11 taken 0 (throw)
+        6:   93-block  2
+call   12 returned 6
+branch 13 taken 6 (fallthrough)
+branch 14 taken 0 (throw)
+        6:   94:                changeVector[i] = newBanknote;
+        6:   94-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   95:            }
+        6:   95-block  0
+call    0 returned 6
+call    1 returned 6
+    $$$$$:   95-block  1
+call    2 never executed
+    $$$$$:   95-block  2
+call    3 never executed
+        -:   96:        }
+        -:   97:    }
+        1:   98:    return changeVector;
+        1:   98-block  0
+    =====:   99:}
+    $$$$$:   99-block  0
+call    0 never executed

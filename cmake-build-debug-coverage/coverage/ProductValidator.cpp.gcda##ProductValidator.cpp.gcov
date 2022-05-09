@@ -1,0 +1,60 @@
+        -:    0:Source:C:/Users/Tudor/Desktop/Laboratoare/lab-910-tudorsuiu/Domain/Product/ProductValidator.cpp
+        -:    0:Graph:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product\ProductValidator.cpp.gcno
+        -:    0:Data:C:\Users\Tudor\Desktop\Laboratoare\lab-910-tudorsuiu\cmake-build-debug-coverage\CMakeFiles\lab_910_tudorsuiu.dir\Domain\Product\ProductValidator.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Tudor on 5/9/2022.
+        -:    3://
+        -:    4:
+        -:    5:#include "ProductValidator.h"
+        -:    6:#include "../MyException.h"
+        -:    7:
+function _ZN16ProductValidator8validateE7Product called 7 returned 100% blocks executed 48%
+        7:    8:void ProductValidator::validate(Product product) {
+        7:    9:    if(product.getIndex() <= 0) {
+        7:    9-block  0
+call    0 returned 7
+branch  1 taken 0 (fallthrough)
+branch  2 taken 7
+    #####:   10:        throw MyException("Product ID must be positive.");
+    %%%%%:   10-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   11:    }
+        7:   12:    else if(product.getCode() < 0) {
+        7:   12-block  0
+call    0 returned 7
+branch  1 taken 0 (fallthrough)
+branch  2 taken 7
+    #####:   13:        throw MyException("Product code must be positive.");
+    %%%%%:   13-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   14:    }
+        7:   15:    else if(product.getName().size() == 0) {
+        7:   15-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 0 (fallthrough)
+branch  4 taken 7
+    #####:   16:        throw MyException("Product name size must be greater than 0.");
+    %%%%%:   16-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   17:    }
+        7:   18:    else if(product.getPrice() <= 0) {
+        7:   18-block  0
+call    0 returned 7
+branch  1 taken 0 (fallthrough)
+branch  2 taken 7
+    #####:   19:        throw MyException("Product price must be positive.");
+    %%%%%:   19-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   20:    }
+        7:   21:}

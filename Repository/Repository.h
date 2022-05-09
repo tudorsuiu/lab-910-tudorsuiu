@@ -35,6 +35,7 @@ public:
      * @param entity: T class object
      */
     void addEntity(T entity) override {
+
         this->entities.push_back(entity);
     }
 
@@ -78,7 +79,7 @@ public:
      * @param index: unsigned int - object index
      * @return: int - object position
      */
-    int getPosByIndex(unsigned int index) {
+    int getPosByIndex(unsigned int index) override {
         for(int i = 0; i < entities.size(); i++) {
             if(entities[i].getIndex() == index) {
                 return i;
@@ -87,12 +88,12 @@ public:
         return -1;
     }
 
-    friend std::ostream &operator<<(std::ostream &os, const Repository<T> &repository) {
-        for(int i = 0; i < repository.entities.size(); i++) {
-            os << repository.entities[i] << '\n';
-        }
-        return os;
-    }
+//    friend std::ostream &operator<<(std::ostream &os, const Repository<T> &repository) {
+//        for(int i = 0; i < repository.entities.size(); i++) {
+//            os << repository.entities[i] << '\n';
+//        }
+//        return os;
+//    }
 };
 
 #endif //LAB_910_TUDORSUIU_REPOSITORY_H
