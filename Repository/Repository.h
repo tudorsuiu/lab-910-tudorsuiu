@@ -35,7 +35,6 @@ public:
      * @param entity: T class object
      */
     void addEntity(T entity) override {
-
         this->entities.push_back(entity);
     }
 

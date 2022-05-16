@@ -4,6 +4,7 @@
 
 #include "BanknoteService.h"
 #include "../Domain/MyException.h"
+#include "../Domain/DoubleCompare/DoubleCompare.h"
 
 BanknoteService::BanknoteService(IRepository<Banknote> &iRepository) : repository(iRepository) {}
 
@@ -42,12 +43,12 @@ void BanknoteService::del(unsigned int index) {
 }
 
 void BanknoteService::updateAll(std::vector<Banknote> newVector) {
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 11; i++) {
         repository.updateEntity(newVector[i].getIndex(), newVector[i]);
     }
 }
 
-Banknote BanknoteService::getBanknoteByValue(unsigned int value) {
+Banknote BanknoteService::getBanknoteByValue(double value) {
     for(int i = 0; i < repository.getAll().size(); i++) {
         if(repository.getAll()[i].getValue() == value) {
             return repository.getAll()[i];
@@ -64,27 +65,39 @@ bool BanknoteService::doesExist(unsigned int index) {
     return false;
 }
 
-std::vector<Banknote> BanknoteService::change(unsigned int productPrice,
-                                       unsigned int insertedAmount) {
-    unsigned int changeValue = insertedAmount - productPrice;
+std::vector<Banknote> BanknoteService::change(double productPrice,
+                                       double insertedAmount) {
+    double changeValue = insertedAmount - productPrice;
     std::vector<Banknote> changeVector;
-    changeVector.push_back(Banknote(1, 100, 0));
-    changeVector.push_back(Banknote(2, 50, 0));
-    changeVector.push_back(Banknote(3, 10, 0));
-    changeVector.push_back(Banknote(4, 5, 0));
-    changeVector.push_back(Banknote(5, 1, 0));
+    changeVector.push_back(Banknote(1, 500, 0));
+    changeVector.push_back(Banknote(2, 200, 0));
+    changeVector.push_back(Banknote(3, 100, 0));
+    changeVector.push_back(Banknote(4, 50, 0));
+    changeVector.push_back(Banknote(5, 10, 0));
+    changeVector.push_back(Banknote(6, 5, 0));
+    changeVector.push_back(Banknote(7, 1, 0));
+    changeVector.push_back(Banknote(8, 0.5, 0));
+    changeVector.push_back(Banknote(9, 0.1, 0));
+    changeVector.push_back(Banknote(10, 0.05, 0));
+    changeVector.push_back(Banknote(11, 0.01, 0));
 
-    if(repository.getAll().size() != 5 ||
+    if(repository.getAll().size() != 11 ||
     (repository.getAll()[0].getNoOccurrences() == 0 &&
     repository.getAll()[1].getNoOccurrences() == 0 &&
     repository.getAll()[2].getNoOccurrences() == 0 &&
     repository.getAll()[3].getNoOccurrences() == 0 &&
-    repository.getAll()[4].getNoOccurrences() == 0)) {
+    repository.getAll()[4].getNoOccurrences() == 0 &&
+    repository.getAll()[5].getNoOccurrences() == 0 &&
+    repository.getAll()[6].getNoOccurrences() == 0 &&
+    repository.getAll()[7].getNoOccurrences() == 0 &&
+    repository.getAll()[8].getNoOccurrences() == 0 &&
+    repository.getAll()[9].getNoOccurrences() == 0 &&
+    repository.getAll()[10].getNoOccurrences() == 0)) {
         return changeVector;
     }
     else {
         for(int i = 0; i < repository.getAll().size(); i++) {
-            while(changeValue >= repository.getAll()[i].getValue() && repository.getAll()[i].getNoOccurrences() > 0) {
+            while(doubleCompare::greaterOrEqual(changeValue, repository.getAll()[i].getValue()) && repository.getAll()[i].getNoOccurrences()> 0) {
                 changeValue -= repository.getAll()[i].getValue();
 
                 Banknote updatedBanknote(repository.getAll()[i].getIndex(), repository.getAll()[i].getValue(), repository.getAll()[i].getNoOccurrences() - 1);

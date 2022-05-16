@@ -17,7 +17,7 @@ Banknote::Banknote(std::string args, char sep) {
     this->loadFromString(args, sep);
 }
 
-Banknote::Banknote(unsigned int index, unsigned int value, unsigned int noOccurrences) {
+Banknote::Banknote(unsigned int index, double value, unsigned int noOccurrences) {
     this->index = index;
     this->value = value;
     this->noOccurrences = noOccurrences;
@@ -39,11 +39,11 @@ void Banknote::setIndex(unsigned int index) {
     this->index = index;
 }
 
-unsigned int Banknote::getValue() {
+double Banknote::getValue() {
     return this->value;
 }
 
-void Banknote::setValue(unsigned int value) {
+void Banknote::setValue(double value) {
     this->value = value;
 }
 
@@ -88,7 +88,7 @@ std::istream &operator>>(std::istream &is, Banknote &banknote) {
     std::cout << "Enter banknote index:"; is >> index;
     banknote.index = index;
 
-    unsigned int value;
+    double value;
     std::cout << "Banknote value:"; is >> value;
     banknote.value = value;
 

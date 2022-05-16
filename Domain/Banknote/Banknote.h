@@ -11,7 +11,7 @@
 class Banknote {
 private:
     unsigned int index;
-    unsigned int value;
+    double value;
     unsigned int noOccurrences;
 public:
     /**
@@ -22,10 +22,10 @@ public:
     /**
      * Cosntructor with parameters
      * @param index: unsigned int - banknote index
-     * @param value: unsigned int - banknote value
+     * @param value: double - banknote value
      * @param noOccurrences: unsigned int - number of banknotes
      */
-    Banknote(unsigned int index, unsigned int value, unsigned int noOccurrences);
+    Banknote(unsigned int index, double value, unsigned int noOccurrences);
 
     /**
      * Create banknote object from string
@@ -59,15 +59,15 @@ public:
 
     /**
      * Value getter
-     * @return: unsigned int - banknote value
+     * @return: double - banknote value
      */
-    unsigned int getValue();
+    double getValue();
 
     /**
      * Value setter
-     * @param value: unsigned int - banknote value
+     * @param value: double - banknote value
      */
-    void setValue(unsigned int value);
+    void setValue(double value);
 
     /**
      * Number of banknotes getter

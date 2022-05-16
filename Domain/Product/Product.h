@@ -15,7 +15,7 @@ private:
     unsigned int index;
     unsigned int code;
     std::string name;
-    unsigned int price;
+    double price;
 public:
     /**
      * Constructor
@@ -27,9 +27,9 @@ public:
      * @param index: unsigned int - product index
      * @param code: unsigned int - product code
      * @param name: string - product name
-     * @param price: unsigned int - product price
+     * @param price: double - product price
      */
-    Product(unsigned int index, unsigned int code, std::string name, unsigned int price);
+    Product(unsigned int index, unsigned int code, std::string name, double price);
 
     /**
      * Create product object from string
@@ -87,15 +87,15 @@ public:
 
     /**
      * Price getter
-     * @return: unsigned int - product price
+     * @return: double - product price
      */
-    unsigned int getPrice();
+    double getPrice();
 
     /**
      * Price setter
-     * @param price: unsigned int - new product price
+     * @param price: double - new product price
      */
-    void setPrice(unsigned int price);
+    void setPrice(double price);
 
     /**
      * To string delimiter

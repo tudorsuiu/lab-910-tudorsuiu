@@ -62,18 +62,18 @@ public:
 
     /**
      * Get position by banknote value
-     * @param value: unsigned int - banknote value
+     * @param value: double - banknote value
      * @return: Banknote object - banknote with given code
      */
-    Banknote getBanknoteByValue(unsigned int value);
+    Banknote getBanknoteByValue(double value);
 
     /**
      * Determine the banknotes that our customer is picking up as change
-     * @param productPrice: unsigned int - product price
-     * @param insertedAmount: unsigned int - inserted amount
+     * @param productPrice: double - product price
+     * @param insertedAmount: double - inserted amount
      * @return: vector<Banknote> - banknotes that our customer is picking up as change
      */
-    std::vector<Banknote> change(unsigned int productPrice, unsigned int insertedAmount);
+    std::vector<Banknote> change(double productPrice, double insertedAmount);
 
     /**
      * Verify if there exist a banknote with the same id

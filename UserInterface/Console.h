@@ -27,8 +27,8 @@ public:
     void uiUpdateBanknote();
     void uiCheckBanknotes();
     void uiDeleteBanknote();
-    void insertMoney(unsigned int &inserted, unsigned int credit, Product &product);
-    void pickUpChange(unsigned int &inserted, Product &product, std::vector<Banknote> copy);
+    void insertMoney(double &inserted, double credit, Product &product);
+    void pickUpChange(double &inserted, Product &product, std::vector<Banknote> copy);
     void runMenu();
 };
 

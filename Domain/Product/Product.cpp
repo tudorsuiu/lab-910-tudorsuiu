@@ -15,7 +15,7 @@ Product::Product(std::string args, char sep){
     this->loadFromString(args, sep);
 }
 
-Product::Product(unsigned int index, unsigned int code, std::string name, unsigned int price) {
+Product::Product(unsigned int index, unsigned int code, std::string name, double price) {
     this->index = index;
     this->code = code;
     this->name = name;
@@ -55,8 +55,12 @@ void Product::setName(std::string name) {
     this->name = name;
 }
 
-unsigned int Product::getPrice() {
+double Product::getPrice() {
     return this->price;
+}
+
+void Product::setPrice(double price) {
+    this->price = price;
 }
 
 std::string Product::toStringDelimiter(char sep) {
@@ -80,10 +84,6 @@ void Product::loadFromString(std::string args, char sep) {
         std::stringstream p(elements[3]);
         p >> this->price;
     }
-}
-
-void Product::setPrice(unsigned int price) {
-    this->price = price;
 }
 
 Product &Product::operator=(const Product &product) {
@@ -140,7 +140,7 @@ std::istream &operator>>(std::istream &is, Product &product) {
     std::cout << "Enter product name:"; is >> name;
     product.name = name;
 
-    unsigned int price;
+    double price;
     std::cout << "Enter product price:"; is >> price;
     product.price = price;
 
