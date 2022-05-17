@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Product.h"
+#include "../MyException.h"
 
 Product::Product() {
     this->index = 0;
@@ -129,20 +130,41 @@ bool Product::operator!=(const Product &product) const {
 
 std::istream &operator>>(std::istream &is, Product &product) {
     unsigned int index;
-    std::cout << "Enter product index:"; is >> index;
-    product.index = index;
+    std::cout << "Enter product id:";
+    if(is >> index) {
+        product.index = index;
+    }
+    else {
+        is.clear();
+        is.ignore(10000, '\n');
+        throw MyException("Id must be a positive number.");
+    }
 
     unsigned int code;
-    std::cout << "Enter product code:"; is >> code;
-    product.code = code;
+    std::cout << "Enter product code:";
+    if(is >> code) {
+        product.code = code;
+    }
+    else {
+        is.clear();
+        is.ignore(10000, '\n');
+        throw MyException("Code must be a positive number.");
+    }
 
     std::string name;
     std::cout << "Enter product name:"; is >> name;
     product.name = name;
 
     double price;
-    std::cout << "Enter product price:"; is >> price;
-    product.price = price;
+    std::cout << "Enter product price:";
+    if(is >> price) {
+        product.price = price;
+    }
+    else {
+        is.clear();
+        is.ignore(10000, '\n');
+        throw MyException("Price must be a positive number.");
+    }
 
     return is;
 }

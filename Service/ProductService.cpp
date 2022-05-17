@@ -23,6 +23,9 @@ Product ProductService::read(unsigned int index) {
 }
 
 std::vector<Product> ProductService::read() {
+    if(repository.getAll().size() == 0) {
+        throw MyException("There are no products to show.");
+    }
     return repository.getAll();
 }
 

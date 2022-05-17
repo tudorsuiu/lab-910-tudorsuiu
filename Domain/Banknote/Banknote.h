@@ -10,7 +10,7 @@
 
 class Banknote {
 private:
-    unsigned int index;
+    int index;
     double value;
     unsigned int noOccurrences;
 public:

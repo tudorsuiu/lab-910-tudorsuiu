@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Console.h"
 #include "../Domain/DoubleCompare/DoubleCompare.h"
+#include "../Domain/MyException.h"
 
 Console::Console(ProductService &serviceProduct, BanknoteService &serviceBanknote) : productService(serviceProduct),
                                                                                      banknoteService(serviceBanknote) {}
@@ -71,11 +72,17 @@ void Console::uiUpdateProduct() {
     try {
         unsigned int index;
         std::cout << "Update product with index:";
-        std::cin >> index;
 
-        Product newProduct;
-        std::cin >> newProduct;
-        productService.update(index, newProduct);
+        if(std::cin >> index) {
+            Product newProduct;
+            std::cin >> newProduct;
+            productService.update(index, newProduct);
+        }
+        else {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            throw MyException("Id must be a positive number.");
+        }
     }
     catch (std::exception &e) {
         std::cout << e.what() << '\n';
@@ -86,8 +93,14 @@ void Console::uiDeleteProduct() {
     try {
         unsigned int index;
         std::cout << "Delete product with index:";
-        std::cin >> index;
-        productService.del(index);
+        if(std::cin >> index) {
+            productService.del(index);
+        }
+        else {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            throw MyException("Id must be a positive number.");
+        }
     }
     catch (std::exception &e) {
         std::cout << e.what() << '\n';
@@ -109,12 +122,16 @@ void Console::uiUpdateBanknote() {
     try {
         unsigned int index;
         std::cout << "Update banknote with index:";
-        std::cin >> index;
-
-        Banknote newBanknote;
-        std::cin >> newBanknote;
-
-        banknoteService.update(index, newBanknote);
+        if(std::cin >> index) {
+            Banknote newBanknote;
+            std::cin >> newBanknote;
+            banknoteService.update(index, newBanknote);
+        }
+        else {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            throw MyException("Id must be a positive number.");
+        }
     }
     catch (std::exception &e) {
         std::cout << e.what() << '\n';
@@ -136,8 +153,14 @@ void Console::uiDeleteBanknote() {
     try {
         unsigned int index;
         std::cout << "Delete banknotes with index:";
-        std::cin >> index;
-        banknoteService.del(index);
+        if(std::cin >> index) {
+            banknoteService.del(index);
+        }
+        else {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            throw MyException("Id must be a positive number.");
+        }
     }
     catch(std::exception &e) {
         std::cout << e.what() << '\n';

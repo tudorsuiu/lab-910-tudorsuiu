@@ -6,6 +6,7 @@
 #include <vector>
 #include <sstream>
 #include "Banknote.h"
+#include "../MyException.h"
 
 Banknote::Banknote() {
     this->index = 0;
@@ -85,16 +86,30 @@ Banknote &Banknote::operator=(const Banknote &banknote) {
 
 std::istream &operator>>(std::istream &is, Banknote &banknote) {
     unsigned int index;
-    std::cout << "Enter banknote index:"; is >> index;
-    banknote.index = index;
+    std::cout << "Enter banknote index:";
+    if(is >> index) {
+        banknote.index = index;
+    }
+    else {
+        is.clear();
+        is.ignore(10000, '\n');
+        throw MyException("Id must be a positive number.");
+    }
 
     double value;
     std::cout << "Banknote value:"; is >> value;
     banknote.value = value;
 
     unsigned int noOccurrences;
-    std::cout << "Number of banknotes:"; is >> noOccurrences;
-    banknote.noOccurrences = noOccurrences;
+    std::cout << "Number of banknotes:";
+    if(is >> noOccurrences) {
+        banknote.noOccurrences = noOccurrences;
+    }
+    else {
+        is.clear();
+        is.ignore(10000, '\n');
+        throw MyException("Number of occurrences must be a positive number.");
+    }
 
     return is;
 }
