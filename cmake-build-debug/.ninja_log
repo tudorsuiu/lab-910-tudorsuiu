@@ -92,3 +92,8 @@
 12	281	6745121273958552	CMakeFiles/lab_910_tudorsuiu.dir/Domain/Banknote/BanknoteValidator.cpp.obj	863eb379808ec79d
 3	322	6745121274368554	CMakeFiles/lab_910_tudorsuiu.dir/Domain/Product/ProductValidator.cpp.obj	5aa96ae6169a210e
 322	470	6745121275828553	lab_910_tudorsuiu.exe	2dd9f63727dbbbe
+14	455	6745130192902588	CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj	dcba55429bd6a28a
+3	503	6745130193352587	CMakeFiles/lab_910_tudorsuiu.dir/main.cpp.obj	7787dbb9c9b816de
+503	671	6745130195022593	lab_910_tudorsuiu.exe	2dd9f63727dbbbe
+3	445	6745130408262988	CMakeFiles/lab_910_tudorsuiu.dir/UserInterface/Console.cpp.obj	dcba55429bd6a28a
+445	637	6745130410113007	lab_910_tudorsuiu.exe	2dd9f63727dbbbe

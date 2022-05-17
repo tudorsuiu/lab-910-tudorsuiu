@@ -170,27 +170,33 @@ void Console::uiDeleteBanknote() {
 void Console::insertMoney(double &inserted, double credit, Product &product) {
     while(doubleCompare::less(inserted, product.getPrice())) {
         std::cout << "Please insert credit (0.01/0.05/0.1/0.5/1/5/10/50/100/200/500):";
-        std::cin >> credit;
+        if(std::cin >> credit) {
+            if (doubleCompare::equal(credit, 0.01) ||
+                doubleCompare::equal(credit, 0.05) ||
+                doubleCompare::equal(credit, 0.1) ||
+                doubleCompare::equal(credit, 0.5) ||
+                doubleCompare::equal(credit, 1) ||
+                doubleCompare::equal(credit, 5) ||
+                doubleCompare::equal(credit, 10) ||
+                doubleCompare::equal(credit, 50) ||
+                doubleCompare::equal(credit, 100) ||
+                doubleCompare::equal(credit, 200) ||
+                doubleCompare::equal(credit, 500)) {
+                Banknote banknote = (banknoteService.getBanknoteByValue(
+                        credit));
+                Banknote newBanknote(banknote.getIndex(), banknote.getValue(),
+                                     banknote.getNoOccurrences() + 1);
 
-        if(doubleCompare::equal(credit, 0.01) ||
-        doubleCompare::equal(credit, 0.05) ||
-        doubleCompare::equal(credit, 0.1) ||
-        doubleCompare::equal(credit, 0.5) ||
-        doubleCompare::equal(credit, 1) ||
-        doubleCompare::equal(credit, 5) ||
-        doubleCompare::equal(credit, 10) ||
-        doubleCompare::equal(credit, 50) ||
-        doubleCompare::equal(credit, 100) ||
-        doubleCompare::equal(credit, 200) ||
-        doubleCompare::equal(credit, 500)) {
-            Banknote banknote = (banknoteService.getBanknoteByValue(credit));
-            Banknote newBanknote(banknote.getIndex(), banknote.getValue(), banknote.getNoOccurrences() + 1);
-
-            banknoteService.update(banknote.getIndex(), newBanknote);
-            inserted += credit;
+                banknoteService.update(banknote.getIndex(), newBanknote);
+                inserted += credit;
+            } else {
+                std::cout << "We don't accept that type of currency." << '\n';
+            }
         }
         else {
-            std::cout << "We don't accept that type of currency." << '\n';
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            throw MyException("Credit must be a double type number.");
         }
     }
 }
@@ -244,6 +250,30 @@ void Console::pickUpChange(double &inserted, Product &product, std::vector<Bankn
                 }
             }
         }
+    }
+}
+
+void Console::change() {
+    try {
+        unsigned int code;
+        std::cout << "Please choose a product:";
+        if(std::cin >> code) {
+            double inserted = 0;
+            double credit;
+            Product product = productService.getProductByCode(code);
+            std::vector<Banknote> copy = banknoteService.read();
+
+            insertMoney(inserted, credit, product);
+            pickUpChange(inserted, product, copy);
+        }
+        else {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            throw MyException("Code must be a positive number.");
+        }
+    }
+    catch(std::exception &e) {
+        std::cout << e.what() << '\n';
     }
 }
 
@@ -322,17 +352,7 @@ void Console::runMenu() {
                             break;
                         }
                         case '2': {
-                            unsigned int code;
-                            std::cout << "Please choose a product:";
-                            std::cin >> code;
-
-                            double inserted = 0;
-                            double credit;
-                            Product product = productService.getProductByCode(code);
-                            std::vector<Banknote> copy = banknoteService.read();
-
-                            insertMoney(inserted, credit, product);
-                            pickUpChange(inserted, product, copy);
+                            change();
                             break;
                         }
                         case 'x': {

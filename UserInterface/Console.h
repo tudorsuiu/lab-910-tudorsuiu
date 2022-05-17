@@ -29,6 +29,7 @@ public:
     void uiDeleteBanknote();
     void insertMoney(double &inserted, double credit, Product &product);
     void pickUpChange(double &inserted, Product &product, std::vector<Banknote> copy);
+    void change();
     void runMenu();
 };
 
